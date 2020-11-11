@@ -1,4 +1,5 @@
-/node_modules
+
+wp-content/themes/leeds_events/node_modules
 /vendor
 /public/assets
 .env
