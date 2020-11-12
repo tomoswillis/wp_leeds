@@ -13,12 +13,12 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+before
 	<?php leeds_events_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		the_content();
+
 
 		wp_link_pages(
 			array(
@@ -27,6 +27,7 @@
 			)
 		);
 		?>
+		after
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

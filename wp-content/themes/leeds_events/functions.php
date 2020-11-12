@@ -7,6 +7,12 @@
  * @package leeds_events
  */
 
+
+
+
+
+ /** *********************** Base Template Functions *********************** */
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -178,3 +184,55 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// ****************** functions ***************************
+
+function scripts()
+{
+	wp_register_style('style', get_template_directory_uri() . '/public/assets/css/app.css', [], 1, 'all');
+	wp_enqueue_style('style');
+
+	wp_register_script('app', get_template_directory_uri() . '/public/assets/js/app.js', [], 1, true);
+	wp_enqueue_script('app');
+}
+
+add_action('wp_enqueue_scripts' , 'scripts');
+
+// removes Posts and comments from the admin CMS
+
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
+   remove_menu_page('edit-comments.php');
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
+
+/*Remove WordPress menu from admin bar*/
+add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
+function remove_wp_logo( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'wp-logo' );
+}
+
+
+
+//Register scripts to use
+function load_vuescripts() {
+	// wp_register_script('wpvue_vuejs', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js');
+	// wp_register_script('app_Vue', get_template_directory_uri() . '/resources/js/app.js', 'wpvue_vuejs', true );
+}
+//Tell WordPress to register the scripts
+add_action('wp_enqueue_scripts', 'load_vuescripts');
+
+
+//Return string for shortcode
+function func_wp_vue(){
+  //Add Vue.js
+  wp_enqueue_script('wpvue_vuejs');
+  //Add my code to it
+  wp_enqueue_script('app_Vue');
+
+  
+} // end function
+
+//Add shortcode to WordPress
+add_shortcode( 'wpvue', 'func_wp_vue' );

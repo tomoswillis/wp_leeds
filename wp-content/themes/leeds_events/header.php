@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -55,5 +56,34 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</nav>
+		#site-navigation
+		<nav class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
+			<ul class="flex justify-around py-2">
+				<li>
+					Home
+				</li>
+				<li>
+					Events
+				</li>
+				<li>
+					Food
+				</li>
+				<li>
+					Login
+				</li>
+			</ul>
+		</nav>
+		<div id="app" class="sm:mx-5 md:mx-0 my-10">
+        <!-- events component -->
+			<div>
+				<h2 class="text-2xl mb-5 ml-5">Upcoming Events</h2>
+				<slider 
+					slug-one='manahatta'
+					slug-two='box'
+					slug-three='byron' 
+					slug-four='bills'>
+				</slider>
+			</div>
+		</div> 
+	</header>

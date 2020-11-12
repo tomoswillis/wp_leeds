@@ -49,7 +49,12 @@ get_header();
 
 		endif;
 		?>
-
+		<?php echo do_shortcode("[wpvue]"); ?>
+	<div id="app" class="sm:mx-5 md:mx-0 my-10">
+        <!-- events component -->
+       
+  	
+		</div>
 	</main><!-- #main -->
 
 <?php
