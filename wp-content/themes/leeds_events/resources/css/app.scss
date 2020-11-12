@@ -1,0 +1,39 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@media (max-aspect-ratio: 16/9) {
+
+    #myVideo {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        }
+}
+
+.headerText {
+position: absolute;
+color: #f1f1f1;
+
+}
+
+.center{ 
+    margin: 0 auto;
+}
+
+.l-button:hover {
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}
