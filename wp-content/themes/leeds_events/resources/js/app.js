@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 
-import Vue from 'node_modules/vue'
+import Vue from 'vue'
 import Vuex from 'vuex'
 import VCalendar from 'v-calendar';
 import VueSlickCarousel from 'vue-slick-carousel'
@@ -293,4 +293,5 @@ new Vue({
 		restaurantresult,
 		VueSlickCarousel, 
 	},
-});
+}); 
+
