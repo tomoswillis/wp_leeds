@@ -697,8 +697,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     slugID: function slugID() {
       var i = window.location.search.substring(1).split("=")[1];
-      var data = i.toLowerCase();
-      this.$data.slug = data;
+      var data = i.toLowerCase()["this"].$data.slug = data;
     }
   },
   mounted: function mounted() {

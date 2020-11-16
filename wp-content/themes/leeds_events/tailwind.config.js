@@ -9,7 +9,7 @@ module.exports = {
         content: [
             './resources/**/*.vue',
             './resources/**/*.scss',
-            '/public/**/*.html',
+            './public/**/*.html',
         ],
     },
     theme: {

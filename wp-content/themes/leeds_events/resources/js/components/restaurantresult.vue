@@ -233,7 +233,7 @@
         methods: {
 			slugID(){
 				let i = window.location.search.substring(1).split("=")[1];
-				const data = i.toLowerCase(); 
+				const data = i.toLowerCase(). 
 				this.$data.slug = data
 			}
 		},
