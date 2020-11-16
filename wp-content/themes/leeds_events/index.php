@@ -49,14 +49,13 @@ get_header();
 
 		endif;
 		?>
-		<?php echo do_shortcode("[wpvue]"); ?>
-	<div id="app" class="sm:mx-5 md:mx-0 my-10">
+
+		<div id="app" class="sm:mx-5 md:mx-0 my-10">
         <!-- events component -->
        
-  	
+  	this is the index
 		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
