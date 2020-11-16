@@ -827,12 +827,19 @@ __webpack_require__.r(__webpack_exports__);
       settings: {
         "infinite": false,
         "speed": 500,
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
+        "slidesToShow": 5,
+        "slidesToScroll": 3,
         "initialSlide": 0,
         'arrows': false,
         "dots": true,
         "responsive": [{
+          "breakpoint": 2000,
+          "settings": {
+            "slidesToShow": 5,
+            "slidesToScroll": 3,
+            "infinite": true
+          }
+        }, {
           "breakpoint": 1280,
           "settings": {
             "slidesToShow": 3,
@@ -36482,7 +36489,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           'privateHire': true
         },
         'description': 'Located in the heart of Headingley, Leeds, Manahatta is a glamorous New York inspired cocktail bar, set across two floors',
-        'thumbnail': 'static/images/restaurants/manahatta/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/restaurants/manahatta/thumbnail.png',
         'times': {
           'open': {
             'hour': 10,
@@ -36515,7 +36522,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           'privateHire': true
         },
         'description': 'We’re an award-winning sports bar based in the centre of Leeds serving the best food & drink. Join us for sport, shuffleboard and cocktails.',
-        'thumbnail': 'static/images/restaurants/box/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/restaurants/box/thumbnail.png',
         'times': {
           'open': {
             'hour': 10,
@@ -36547,7 +36554,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           'privateHire': true
         },
         'description': 'Bill’s is a place for every occasion whether you want a quick breakfast with colleagues or you are celebrating a special birthday dinner with friends and family.',
-        'thumbnail': 'static/images/restaurants/bills/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/restaurants/bills/thumbnail.png',
         'times': {
           'open': {
             'hour': 10,
@@ -36579,7 +36586,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           'private-hire': true
         },
         'description': 'American-inspired chain diner serving posh hamburgers with a choice of toppings, sides and salads.',
-        'thumbnail': 'static/images/restaurants/byron/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/restaurants/byron/thumbnail.png',
         'times': {
           'open': {
             'hour': 10,
@@ -36611,7 +36618,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         'description': '"Swan Lake" is a timeless love story that mixes magic, tragedy, and romance into four acts. It features Prince Siegfried and a lovely swan princess named Odette.',
         'cost': 10.55,
-        'thumbnail': 'static/images/events/ballet/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/events/ballet/thumbnail.png',
         'bookingLink': 'http://www.test.com'
       },
       'beerPong': {
@@ -36631,7 +36638,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         'description': 'Beer pong competition, the winner receives a £100 voucher',
         'cost': 0,
-        'thumbnail': 'static/images/events/skyrack/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/events/skyrack/thumbnail.png',
         'bookingLink': 'http://www.test.com'
       },
       'treeKicks': {
@@ -36651,7 +36658,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         'description': 'The new up and coming band, Tree Kicks will be daubing their Latest album',
         'cost': 25.00,
-        'thumbnail': 'static/images/events/libary/thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/events/libary/thumbnail.png',
         'bookingLink': 'http://www.test.com'
       },
       'warHorse': {
@@ -36671,7 +36678,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         'description': 'War horse start a new tour of the UK, 5 starts, an incredible experience',
         'cost': 22,
-        'thumbnail': 'static/images/events/theFirstDirect/warHorse-thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/events/theFirstDirect/warHorse-thumbnail.png',
         'bookingLink': 'http://www.test.com'
       },
       'curiousIncident': {
@@ -36691,7 +36698,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         'description': 'The Curious Incident of the Dog in the Night-Time is a play by Simon Stephens based on the novel of the same name by Mark Haddon.',
         'cost': 26.00,
-        'thumbnail': 'static/images/events/theFirstDirect/theCuriousDog-thumbnail.png',
+        'thumbnail': 'wp-content/themes/leeds_events/public/static/images/events/theFirstDirect/theCuriousDog-thumbnail.png',
         'bookingLink': 'http://www.test.com'
       }
     },

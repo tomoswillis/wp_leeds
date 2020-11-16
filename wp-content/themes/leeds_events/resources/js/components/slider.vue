@@ -23,12 +23,21 @@
         settings: {
 			"infinite": false,
 			"speed": 500,
-			"slidesToShow": 4,
-			"slidesToScroll": 4,
+			"slidesToShow": 5,
+			"slidesToScroll": 3,
 			"initialSlide": 0,
 			'arrows': false,
 			"dots": true,
 			"responsive": [
+				{
+				"breakpoint": 2000,
+				"settings": {
+					"slidesToShow": 5,
+					"slidesToScroll": 3,
+					"infinite": true,
+					
+					}
+				},
 				{
 				"breakpoint": 1280,
 				"settings": {
