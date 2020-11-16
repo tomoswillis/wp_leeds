@@ -31,8 +31,9 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		standard page
+
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
