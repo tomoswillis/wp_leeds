@@ -56,17 +56,6 @@
 				</li>
 			</ul>
 		</nav>
-		<div id="app" class="sm:mx-5 md:mx-0 my-10">
-        <!-- events component -->
-			<!-- <div>
-				<h2 class="text-2xl mb-5 ml-5">Upcoming Events</h2>
-				<slider 
-					slug-one='manahatta'
-					slug-two='box'
-					slug-three='byron' 
-					slug-four='bills'>
-				</slider>
-			</div>
-		</div>  -->
+		<!--  -->
 	</header>
 
