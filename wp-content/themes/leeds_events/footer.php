@@ -33,6 +33,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="wp-content/themes/leeds_events/public/assets/js/app.js" async></script>
+<!-- <script src="wp-content/themes/leeds_events/public/assets/js/app.js" async></script> -->
 </body>
 </html>
