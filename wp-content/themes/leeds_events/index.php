@@ -15,47 +15,48 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		<div id="app" class="sm:mx-5 md:mx-0 my-10">
-        <!-- events component -->
-       
-  	this is the index
+	<div class="flex justify-between min-h-screen items-center">
+			<div class="w-full">
+				<video autoplay muted loop id="myVideo" class="w-full">
+					<source src="wp-content/themes/leeds_events/public/static/videos/header.mp4" type="video/mp4" class="w-full min-h-screen">
+				</video>
+				<div class="absolute inset-0 flex justify-between items-center px-20 text-white">
+					<div class="">
+						<h1 class="text-5xl">Welcome to Leeds</h1>
+						<p class="text-xl">Live Love Leeds</p>
+					</div>
+					<div>
+						<!-- <h2 class="text-2xl mt-16">Current Weather</h2> -->
+					</div>
+				</div>
+			</div>
 		</div>
-	</main><!-- #main -->
+		<!-- main body -->
+		<div id="app" class="sm:mx-5 md:mx-0 my-10">
+			<!-- events component -->
+			<div>
+				<h2 class="text-2xl mb-5 ml-5">Upcoming Events</h2>
+			</div>
+			<div class=" md:w-full xl:w-10/12 center">
+				<eventslider
+					slug-one='swanLake'
+					slug-two='beerPong'
+					slug-three='treeKicks' 
+					slug-four='warHorse'
+					slug-five='curiousIncident'>
+				</eventslider>
+			</div>
+			<!-- recommended restaurants components -->
+			<div>
+				<h2 class="text-2xl mb-10 mt-16 text-center" >Our Recommend Restaurants</h2>
+				<slider 
+					slug-one='manahatta'
+					slug-two='box'
+					slug-three='byron' 
+					slug-four='bills'>
+				</slider>
+			</div>
+		</div>
 
 <?php
 get_footer();
