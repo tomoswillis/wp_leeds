@@ -52,6 +52,7 @@
 				"settings": {
 					"infinite": true,
 					"slidesToShow": 2,
+					"slidesToScroll": 1,
 					"speed": 500,
 					"rows": 2,
 					"slidesPerRow": 1
@@ -62,6 +63,7 @@
 				"settings": {
 					"infinite": true,
 					"slidesToShow": 1,
+					"slidesToScroll": 1,
 					"speed": 500,
 					"rows": 2,
 					"slidesPerRow": 1
