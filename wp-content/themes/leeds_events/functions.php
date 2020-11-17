@@ -213,26 +213,7 @@ function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
 }
 
+function home_page_recommended_restaurants()
+{
 
-
-//Register scripts to use
-function load_vuescripts() {
-	// wp_register_script('wpvue_vuejs', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js');
-	// wp_register_script('app_Vue', get_template_directory_uri() . '/resources/js/app.js', 'wpvue_vuejs', true );
 }
-//Tell WordPress to register the scripts
-add_action('wp_enqueue_scripts', 'load_vuescripts');
-
-
-//Return string for shortcode
-function func_wp_vue(){
-  //Add Vue.js
-  wp_enqueue_script('wpvue_vuejs');
-  //Add my code to it
-  wp_enqueue_script('app_Vue');
-
-  
-} // end function
-
-//Add shortcode to WordPress
-add_shortcode( 'wpvue', 'func_wp_vue' );
