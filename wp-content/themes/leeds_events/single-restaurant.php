@@ -10,20 +10,21 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<div id="app" class="">
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			
-			var_dump(get_fields());
-
-		
-		endwhile; // End of the loop.
+			$current_post = get_fields();
 		?>
 
-	</main><!-- #main -->
-
+		
+			<restaurantresult :current_post='<?php echo json_encode($current_post); ?>'> </restaurantresult>
+		
+			
+		<?php endwhile; // End of the loop.
+		?>
+	</div>
+			
 <?php
 get_sidebar();
 get_footer();
