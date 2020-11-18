@@ -11,8 +11,8 @@
 
 ?>
 
-	<footer class="w-full bg-gray-200 p-5">
-        <div class="md:w-1/3 pl-5">
+	<footer class="w-full bg-gray-200 p-5 flex flex-wrap">
+        <div class="md:w-1/3 pl-5 pr-5">
             <h1 class="text-2xl text-orange-400">News and Offers</h1>
             <p class="font-light">
                 We have exclusive news and offers for the biggest events and incredible performances. You may also save yourself money on food and selected events!
@@ -23,11 +23,11 @@
                 <p>Get Offers</p> 
             </div>
         </div>
-        <div class="md:w-1/3">
-
+        <div class="md:w-1/3 pl-5 pr-5">
+            <h1 class="text-2xl text-orange-400">About Us</h1>
         </div>
-        <div class="md:w-1/3">
-
+        <div class="md:w-1/3 pr-5">
+            <h1 class="text-2xl text-orange-400"> Site Map</h1>
         </div>
     </footer>
 </div><!-- #page -->
