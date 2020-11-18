@@ -13,6 +13,7 @@
 <script>
   export default {
 	props: {
+			'homepage-requested-posts-id': Array,
 			'slug-one': String,
 			'slug-two': String,
 			'slug-three': String,
@@ -77,7 +78,7 @@
 		foo() {
 			return this.slugOne
 		}
-        },
+	},
   }
 </script>
 

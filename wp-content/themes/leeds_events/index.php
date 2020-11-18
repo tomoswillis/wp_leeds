@@ -13,7 +13,10 @@
  */
 
 get_header();
+?> <?php
+	$posts = get_restaurants();
 ?>
+
 
 	<div class="flex justify-between min-h-screen items-center">
 			<div class="w-full">
@@ -50,6 +53,14 @@ get_header();
 			<div>
 				<h2 class="text-2xl mb-10 mt-16 text-center" >Our Recommend Restaurants</h2>
 				<slider 
+					:homepage-requested-posts-id='[
+						<?php if( $posts ):
+							foreach( $posts as $post ): 
+								setup_postdata( $post );
+								echo the_id();?>,
+							<?php endforeach;
+						?>]
+						<?php endif; ?>'
 					slug-one='manahatta'
 					slug-two='box'
 					slug-three='byron' 
@@ -57,6 +68,5 @@ get_header();
 				</slider>
 			</div>
 		</div>
-
-<?php
-get_footer();
+		
+<?php get_footer();
