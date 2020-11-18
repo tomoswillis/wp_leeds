@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-
+<!-- Div with an id of app inits vue and allows it to work -->
 	<div id="app" class="">
 		<?php
 		while ( have_posts() ) :
@@ -17,7 +17,7 @@ get_header();
 			$current_post = get_fields();
 		?>
 
-		
+		<!-- restaurantresult  is a Vue component. This is for a JS framework and accepts standard stings, numbers, js objects and Arrays. Data being passed if for a single post and being encoded to json then being printed (echoed) -->
 			<restaurantresult :current_post='<?php echo json_encode($current_post); ?>'> </restaurantresult>
 		
 			
