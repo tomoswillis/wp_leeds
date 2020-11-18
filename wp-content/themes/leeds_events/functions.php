@@ -205,15 +205,25 @@ function post_remove ()      //creating functions post_remove for removing menu 
    remove_menu_page('edit-comments.php');
 }
 
-add_action('admin_menu', 'post_remove');   //adding action for triggering function call
+
+function get_restaurants(){
+	return get_posts(array(
+		'posts_per_page'	=> -1,
+		'post_type'			=> 'restaurant'
+	));
+}
+
+function home_page_recommended_restaurants()
+{
+	
+}
+
+
+//adding action for triggering function call
+add_action('admin_menu', 'post_remove'); 
 
 /*Remove WordPress menu from admin bar*/
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
 function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
-}
-
-function home_page_recommended_restaurants()
-{
-
 }
