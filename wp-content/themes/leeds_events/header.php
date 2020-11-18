@@ -33,34 +33,18 @@
 
 	<header id="masthead" class="site-header">
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'leeds_events' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
+			<div class="justify-around">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>	
+			</div>
 		</nav>
-		#site-navigation
-		<nav class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
-			<ul class="flex justify-around py-2">
-				<li>
-					Home
-				</li>
-				<li>
-					Events
-				</li>
-				<li>
-					Food
-				</li>
-				<li>
-					Login
-				</li>
-			</ul>
-		</nav>
-		<!--  -->
 	</header>
 
