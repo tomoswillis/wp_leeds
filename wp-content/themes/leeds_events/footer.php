@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer class="w-full bg-gray-200 p-5 flex flex-wrap">
+	<footer class="w-full bg-gray-200 p-5 flex flex-wrap static bottom-0">
         <div class="md:w-1/3 pl-5 pr-5">
             <h1 class="text-2xl text-orange-400">News and Offers</h1>
             <p class="font-light">
