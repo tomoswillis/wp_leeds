@@ -10,30 +10,42 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div id="app" class=" md:mx-10">
+	<div class="mx-10 my-10 md:flex justify-between items-baseline md:my-2">
+		<div>
+			<h1 class="text-3xl mt-10">All Restaurants</h1>
+		</div>
+		<form action="/wordpress/search-restaurants/" method="get">
+			<div class="md:w-2/5">
+				<div class="shadow-md px-2 my-5 flex justify-between rounded-lg">
+					<input type="text" name="search_text" placeholder="Search Restaurants" class="bg-transparent w-4/5 pl-2">
+					<button type="submit" name="" class="bg-orange-500 w-8 h-8 pt-1 rounded-md my-2 text-white">
+						<span class="material-icons">
+							search
+						</span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	
+	
+	<div class=" rounded-lg">
+		<div class="mt-5 flex flex-wrap justify-center">
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+				$current_post = get_fields();
+			?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				<restaurantsearch :postdata='<?php echo json_encode($current_post); ?>' url='<?php echo get_permalink() ?>' class=""></restaurantsearch>
 
-			endwhile;
+			<?php endwhile;
 
 			the_posts_navigation();
 
@@ -43,10 +55,9 @@ get_header();
 
 		endif;
 		?>
-
-	</main><!-- #main -->
-
-	this is not the standard achrive
+		</div>
+	</div>
+</div>
 
 <?php
 get_sidebar();
