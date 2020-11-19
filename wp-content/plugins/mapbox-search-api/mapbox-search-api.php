@@ -7,6 +7,10 @@
     Version: 1.0.0
 */
 
+
+new Smashing_Fields_Plugin();
+new mapbox();
+
 class Smashing_Fields_Plugin {
 
     public function __construct() {
@@ -14,10 +18,13 @@ class Smashing_Fields_Plugin {
         add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ));
         add_action( 'admin_init', array( $this, 'setup_sections' ) );
         add_action( 'admin_init', array( $this, 'setup_fields' ) );
+        add_action( 'admin_init', array( $this, 'setup_location_sections' ) );
+        add_action( 'admin_init', array( $this, 'setup_location_fields' ) );
         add_action( 'admin_menu', array( $this, 'create_plugin_page' ));
     }
 
 // **************************************SETTINGS-PAGE******************************
+
 
     public function create_plugin_settings_page() {
         // Add the menu item and page
@@ -81,11 +88,6 @@ class Smashing_Fields_Plugin {
     }
     
 
-    // public function field_callback( $arguments ) {
-    //     echo '<input name="our_first_field" id="our_first_field" type="text" value="' . get_option( 'our_first_field' ) . '" />';
-    //     register_setting( 'smashing_fields', 'our_first_field' );
-    // }
-
     public function field_callback( $arguments ) {
         $value = get_option( $arguments['uid'] ); // Get the current value, if there is one
         if( ! $value ) { // If no value exists
@@ -128,20 +130,110 @@ class Smashing_Fields_Plugin {
 
     public function plugin_page_content() { ?>
         <div class="wrap">
-            <h2>Mapbox Search Settings Page</h2>
-            <h3>Please ensure you have entered your api key/token in settings-mapbox search</h3>
+            <h2>Mapbox Search Page</h2>
             <form method="post" action="options.php">
-                hello world
+                <?php
+                    settings_fields( 'mapbox_search' );
+                    do_settings_sections( 'mapbox_search' );?>
+                    <p>Please ensure you have entered your api key/token in settings-mapbox search</p> <?php
+                    submit_button('Get Coordinates');
+                ?>
             </form>
-        </div> <?php
-
-        
+        </div> 
+        <?php
+        $data = new mapbox;
+        echo $data->get_api();
     }
 
-    	
+    public function setup_location_sections() {
+        add_settings_section( 'location_section', 'Search for a location', array( $this, 'section_location_callback' ), 'mapbox_search' );
+    }
+
+    public function section_location_callback( $arguments ) {
+        switch( $arguments['id'] ){
+            case 'location_section':
+                echo 'Search for a location and receive the longitude & latitude for the map';
+                break;
+        }
+    }
+
+
+    public function setup_location_fields() {
+        $fields = array(
+            array(
+                'uid' => 'our_location_field',
+                'label' => 'Location',
+                'section' => 'location_section',
+                'type' => 'text',
+                'options' => false,
+                'placeholder' => 'Enter Location Here',
+                
+            )
+        );
+        foreach( $fields as $field ){
+            add_settings_field( $field['uid'], $field['label'], array( $this, 'location_field_callback' ), 'mapbox_search', $field['section'], $field );
+            register_setting( 'mapbox_search', $field['uid'] );
+        }
+    }
     
 
+    public function location_field_callback( $arguments ) {
+        $value = get_option( $arguments['uid'] ); // Get the current value, if there is one
+        if( ! $value ) { // If no value exists
+            $value = $arguments['default']; // Set to our default
+        }
+    
+        // Check which type of field we want
+        switch( $arguments['type'] ){
+            case 'text': // If it is a text field
+                printf( '<input name="%1$s" id="%1$s" type="%2$s" placeholder="%3$s" value="%4$s" />', $arguments['uid'], $arguments['type'], $arguments['placeholder'], $value );
+                break;
+        }
+
+    }
     // // Our code will go here
 };
-new Smashing_Fields_Plugin();
 
+
+class mapbox {
+
+    function __construct(){
+       
+    }
+
+    function get_api() {
+        defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+        $newRequest = new WP_http();
+
+        $api_key = get_option('our_first_field');
+        $location = get_option('our_location_field');
+        
+        $url = "https://api.mapbox.com/geocoding/v5/mapbox.places/{$location}.json?access_token={$api_key}";
+        
+        $arguments = array(
+            'method' => 'GET',
+            'body' => array(),
+            'format'  => 'json',
+        );
+    
+        $response = $newRequest->get( $url, $arguments );
+        $response = wp_remote_retrieve_body( $response );
+        $array = json_decode($response);
+
+        $array = json_decode(json_encode($array), true);
+    
+        if ( is_wp_error( $response ) ) {
+            $error_message = $response->get_error_message();
+            return "Something went wrong: $error_message";
+        } else {
+           echo json_encode($array['features'][0]['bbox']);
+           
+
+        }
+    }	
+
+
+
+
+};
