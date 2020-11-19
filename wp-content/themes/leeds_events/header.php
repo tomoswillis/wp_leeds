@@ -34,7 +34,7 @@
 	<header id="masthead" class="site-header">
 
 		<nav id="site-navigation" class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'leeds_events' ); ?></button>
+			
 			<div class="justify-around">
 				<?php
 				wp_nav_menu(
