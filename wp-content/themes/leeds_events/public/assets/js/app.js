@@ -2607,7 +2607,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    slug: String
+    slug: 'manahatta',
+    url: String,
+    postdata: {
+      type: Object,
+      required: true
+    }
   },
   data: function data() {
     return {
@@ -2620,10 +2625,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.state.restaurants[this.slug];
     }
   },
-  methods: {},
-  mounted: function mounted() {
-    console.log(luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].local());
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -13519,226 +13521,219 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "a",
-    {
-      attrs: {
-        href: "http://leeds-static.test/restaurant.html?id=" + _vm.data.name
-      }
-    },
-    [
-      _c(
-        "div",
-        {
-          staticClass:
-            "bg-white mx-2 px-2 py-4 my-5 rounded-lg max-w-xs shadow-md "
-        },
-        [
-          _c("div", { staticClass: "px-2  cursor-pointer" }, [
+  return _c("a", { attrs: { href: _vm.$props.url } }, [
+    _c(
+      "div",
+      {
+        staticClass:
+          "bg-white mx-2 px-2 py-4 my-5 rounded-lg max-w-xs shadow-md "
+      },
+      [
+        _c("div", { staticClass: "px-2  cursor-pointer" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-col justify-end inline text-white bg-thumbnail rounded-xl"
+            },
+            [
+              _c("img", {
+                attrs: {
+                  src: _vm.$props.postdata.restaurant_image.url,
+                  alt: "thumbnail"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "h2",
+                { staticClass: "text-2xl font-bold absolute px-5 mb-8" },
+                [_vm._v(_vm._s(_vm.$props.postdata.restaurant_name))]
+              ),
+              _vm._v(" "),
+              _c("h3", { staticClass: "text-lg absolute px-5 mb-2" }, [
+                _vm._v(_vm._s(_vm.$props.postdata.location.city))
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", {}, [
             _c(
               "div",
-              {
-                staticClass:
-                  "flex flex-col justify-end inline text-white bg-thumbnail rounded-xl"
-              },
+              { staticClass: "px-5 max-width-xs text-sm my-2 text-gray-700" },
               [
-                _c("img", {
-                  attrs: { src: _vm.data.thumbnail, alt: "thumbnail" }
-                }),
-                _vm._v(" "),
                 _c(
-                  "h2",
-                  { staticClass: "text-2xl font-bold absolute px-5 mb-8" },
-                  [_vm._v(_vm._s(_vm.data.name))]
+                  "div",
+                  { staticClass: "flex justify-between items-center mb-2" },
+                  [
+                    _c("div", { staticClass: "text-md mr-5 flex\t" }, [
+                      this.open == "true"
+                        ? _c(
+                            "p",
+                            { staticClass: "font-bold mr-2 text-green-500" },
+                            [_vm._v("Open")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      this.open == "closing"
+                        ? _c(
+                            "p",
+                            { staticClass: "font-bold mr-2 text-orange-400" },
+                            [_vm._v("Closing Soon")]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      this.open == "false"
+                        ? _c(
+                            "p",
+                            { staticClass: "font-bold mr-2 text-red-400" },
+                            [_vm._v("closed")]
+                          )
+                        : _vm._e(),
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(_vm.$props.postdata.opening_time) +
+                          " - " +
+                          _vm._s(_vm.$props.postdata.closing_time) +
+                          "\n\t\t\t\t\t"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("div", { staticClass: "flex" }, [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              height: "10",
+                              width: "15",
+                              viewBox: "0 0 600 600",
+                              preserveAspectRatio: "xMinYMin meet"
+                            }
+                          },
+                          [
+                            _c("polygon", {
+                              attrs: {
+                                points:
+                                  "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
+                                fill: "#FB9E4F",
+                                stroke: "#aaa",
+                                "stroke-width": "1"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              height: "10",
+                              width: "15",
+                              viewBox: "0 0 600 600",
+                              preserveAspectRatio: "xMinYMin meet"
+                            }
+                          },
+                          [
+                            _c("polygon", {
+                              attrs: {
+                                points:
+                                  "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
+                                fill: "#FB9E4F",
+                                stroke: "#aaa",
+                                "stroke-width": "1"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              height: "10",
+                              width: "15",
+                              viewBox: "0 0 600 600",
+                              preserveAspectRatio: "xMinYMin meet"
+                            }
+                          },
+                          [
+                            _c("polygon", {
+                              attrs: {
+                                points:
+                                  "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
+                                fill: "#FB9E4F",
+                                stroke: "#aaa",
+                                "stroke-width": "1"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              height: "10",
+                              width: "15",
+                              viewBox: "0 0 600 600",
+                              preserveAspectRatio: "xMinYMin meet"
+                            }
+                          },
+                          [
+                            _c("polygon", {
+                              attrs: {
+                                points:
+                                  "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
+                                fill: "#FB9E4F",
+                                stroke: "#aaa",
+                                "stroke-width": "1"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              height: "10",
+                              width: "15",
+                              viewBox: "0 0 600 600",
+                              preserveAspectRatio: "xMinYMin meet"
+                            }
+                          },
+                          [
+                            _c("polygon", {
+                              attrs: {
+                                points:
+                                  "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
+                                fill: "#C4C4C4",
+                                stroke: "#aaa",
+                                "stroke-width": "1"
+                              }
+                            })
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
                 ),
-                _vm._v(" "),
-                _c("h3", { staticClass: "text-lg absolute px-5 mb-2" }, [
-                  _vm._v(_vm._s(_vm.data.location.shortHand))
+                _vm._v(
+                  "\n\t\t\t\t" +
+                    _vm._s(_vm.$props.postdata.description) +
+                    "\n\t\t\t\t\t"
+                ),
+                _c("p", { staticClass: "text-xs text-right mt-2" }, [
+                  _c("strong", [_vm._v("Average Cost: ")]),
+                  _vm._v("£" + _vm._s(_vm.$props.postdata.average_cost) + "pp")
                 ])
               ]
-            ),
-            _vm._v(" "),
-            _c("div", {}, [
-              _c(
-                "div",
-                { staticClass: "px-5 max-width-xs text-sm my-2 text-gray-700" },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "flex justify-between items-center mb-2" },
-                    [
-                      _c("div", { staticClass: "text-md mr-5 flex\t" }, [
-                        this.open == "true"
-                          ? _c(
-                              "p",
-                              { staticClass: "font-bold mr-2 text-green-500" },
-                              [_vm._v("Open")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        this.open == "closing"
-                          ? _c(
-                              "p",
-                              { staticClass: "font-bold mr-2 text-orange-400" },
-                              [_vm._v("Closing Soon")]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        this.open == "false"
-                          ? _c(
-                              "p",
-                              { staticClass: "font-bold mr-2 text-red-400" },
-                              [_vm._v("closed")]
-                            )
-                          : _vm._e(),
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(_vm.data.times.open.hour) +
-                            ":" +
-                            _vm._s(_vm.data.times.open.minute) +
-                            " - " +
-                            _vm._s(_vm.data.times.close.hour) +
-                            ":" +
-                            _vm._s(_vm.data.times.close.minute) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("div", { staticClass: "flex" }, [
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                height: "10",
-                                width: "15",
-                                viewBox: "0 0 600 600",
-                                preserveAspectRatio: "xMinYMin meet"
-                              }
-                            },
-                            [
-                              _c("polygon", {
-                                attrs: {
-                                  points:
-                                    "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
-                                  fill: "#FB9E4F",
-                                  stroke: "#aaa",
-                                  "stroke-width": "1"
-                                }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                height: "10",
-                                width: "15",
-                                viewBox: "0 0 600 600",
-                                preserveAspectRatio: "xMinYMin meet"
-                              }
-                            },
-                            [
-                              _c("polygon", {
-                                attrs: {
-                                  points:
-                                    "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
-                                  fill: "#FB9E4F",
-                                  stroke: "#aaa",
-                                  "stroke-width": "1"
-                                }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                height: "10",
-                                width: "15",
-                                viewBox: "0 0 600 600",
-                                preserveAspectRatio: "xMinYMin meet"
-                              }
-                            },
-                            [
-                              _c("polygon", {
-                                attrs: {
-                                  points:
-                                    "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
-                                  fill: "#FB9E4F",
-                                  stroke: "#aaa",
-                                  "stroke-width": "1"
-                                }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                height: "10",
-                                width: "15",
-                                viewBox: "0 0 600 600",
-                                preserveAspectRatio: "xMinYMin meet"
-                              }
-                            },
-                            [
-                              _c("polygon", {
-                                attrs: {
-                                  points:
-                                    "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
-                                  fill: "#FB9E4F",
-                                  stroke: "#aaa",
-                                  "stroke-width": "1"
-                                }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                height: "10",
-                                width: "15",
-                                viewBox: "0 0 600 600",
-                                preserveAspectRatio: "xMinYMin meet"
-                              }
-                            },
-                            [
-                              _c("polygon", {
-                                attrs: {
-                                  points:
-                                    "294,3 585.246118,214.602691 474,556.983037 114,556.983037 2.753882,214.602691",
-                                  fill: "#C4C4C4",
-                                  stroke: "#aaa",
-                                  "stroke-width": "1"
-                                }
-                              })
-                            ]
-                          )
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(
-                    "\n\t\t\t\t" + _vm._s(_vm.data.description) + "\n\t\t\t\t\t"
-                  ),
-                  _c("p", { staticClass: "text-xs text-right mt-2" }, [
-                    _c("strong", [_vm._v("Average Cost: ")]),
-                    _vm._v("£" + _vm._s(_vm.data.averageCost) + "pp")
-                  ])
-                ]
-              )
-            ])
+            )
           ])
-        ]
-      )
-    ]
-  )
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

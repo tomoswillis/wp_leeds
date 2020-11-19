@@ -1,11 +1,11 @@
-<template><a :href="'http://leeds-static.test/restaurant.html?id='+ data.name" >
+<template><a :href="$props.url" >
 <div class="bg-white mx-2 px-2 py-4 my-5 rounded-lg max-w-xs shadow-md ">
 	<div class="px-2  cursor-pointer">
 		<div class="flex flex-col justify-end inline text-white bg-thumbnail rounded-xl">
-			<img :src="data.thumbnail" alt="thumbnail" class="">
+			<img :src="$props.postdata.restaurant_image.url" alt="thumbnail" class="">
 			<!-- <h2 class="text-md font-bold absolute ">{{data.category}}</h2> -->
-			<h2 class="text-2xl font-bold absolute px-5 mb-8">{{data.name}}</h2>
-			<h3 class="text-lg absolute px-5 mb-2">{{data.location.shortHand}}</h3>
+			<h2 class="text-2xl font-bold absolute px-5 mb-8">{{$props.postdata.restaurant_name}}</h2>
+			<h3 class="text-lg absolute px-5 mb-2">{{$props.postdata.location.city}}</h3>
 		</div>
 		<div class="">
 			
@@ -15,7 +15,7 @@
 						<p class="font-bold mr-2 text-green-500" v-if="this.open == 'true'">Open</p>
 						<p class="font-bold mr-2 text-orange-400" v-if="this.open == 'closing'">Closing Soon</p>
 						<p class="font-bold mr-2 text-red-400" v-if="this.open == 'false'">closed</p>
-						{{data.times.open.hour}}:{{data.times.open.minute}} - {{data.times.close.hour}}:{{data.times.close.minute}}
+						{{$props.postdata.opening_time}} - {{$props.postdata.closing_time}}
 					</div>
 					<div>
 						<div class="flex">
@@ -40,8 +40,8 @@
 						</div>	
 					</div>
 				</div>
-				{{data.description}}
-					<p class="text-xs text-right mt-2"><strong>Average Cost: </strong>£{{data.averageCost}}pp</p>
+				{{$props.postdata.description}}
+					<p class="text-xs text-right mt-2"><strong>Average Cost: </strong>£{{$props.postdata.average_cost}}pp</p>
 			</div>
 		</div>
 	</div>
@@ -53,7 +53,12 @@
 	import { DateTime } from 'luxon';
 	export default {
         props: {
-			slug: String,
+			slug: 'manahatta',
+			url: String,
+			postdata: {
+				type: Object,
+				required: true,
+			}
 			
         },
 		data() {
@@ -70,13 +75,6 @@
         
         methods: {
 			
-		},
-		mounted: function () {
-			console.log(
-				 DateTime.local(),
-				
-			);
-
-		}		
+		},	
 	};
 </script>
