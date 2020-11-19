@@ -11,15 +11,18 @@ class Smashing_Fields_Plugin {
 
     public function __construct() {
         // Hook into the admin menu
-        add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ) );
+        add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ));
         add_action( 'admin_init', array( $this, 'setup_sections' ) );
         add_action( 'admin_init', array( $this, 'setup_fields' ) );
+        add_action( 'admin_menu', array( $this, 'create_plugin_page' ));
     }
+
+// **************************************SETTINGS-PAGE******************************
 
     public function create_plugin_settings_page() {
         // Add the menu item and page
-        $page_title = 'My Awesome Settings Page';
-        $menu_title = 'Awesome Plugin';
+        $page_title = 'Mapbox Search Settings';
+        $menu_title = 'Mapbox Search';
         $capability = 'manage_options';
         $slug = 'smashing_fields';
         $callback = array( $this, 'plugin_settings_page_content' );
@@ -45,7 +48,7 @@ class Smashing_Fields_Plugin {
     }
 
     public function setup_sections() {
-        add_settings_section( 'our_first_section', 'Your Mapbox api Key', array( $this, 'section_callback' ), 'smashing_fields' );
+        add_settings_section( 'our_first_section', 'Your Mapbox api Token', array( $this, 'section_callback' ), 'smashing_fields' );
     }
 
     public function section_callback( $arguments ) {
@@ -65,10 +68,10 @@ class Smashing_Fields_Plugin {
                 'section' => 'our_first_section',
                 'type' => 'text',
                 'options' => false,
-                'placeholder' => 'DD/MM/YYYY',
-                'helper' => 'Does this help?',
-                'supplemental' => 'I am underneath!',
-                'default' => '01/01/2015'
+                'placeholder' => 'Paste Here',
+                'helper' => 'should look something like this:',
+                'supplemental' => 'pk.eyJ1IjoidG9tb3N3aWxsaXMiLCJhojoiY2s3eGdsNHF2MGJzcjNwbzJsejJwcDlseCJ9.WxFWrX5y9ANZHw0PlDfzIw',
+                
             )
         );
         foreach( $fields as $field ){
@@ -106,6 +109,37 @@ class Smashing_Fields_Plugin {
             printf( '<p class="description">%s</p>', $supplimental ); // Show it
         }
     }
+
+
+    // **************************************STANDARD PAGE******************************
+    public function create_plugin_page() {
+        // Add the menu item and page
+        $page_title = 'Mapbox Search';
+        $menu_title = 'Mapbox Search';
+        $capability = 'manage_options';
+        $slug = 'mapbox_search';
+        $callback = array( $this, 'plugin_page_content' );
+        $icon = 'dashicons-admin-site-alt';
+        $position = 40;
+    
+        add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position );
+
+    }
+
+    public function plugin_page_content() { ?>
+        <div class="wrap">
+            <h2>Mapbox Search Settings Page</h2>
+            <h3>Please ensure you have entered your api key/token in settings-mapbox search</h3>
+            <form method="post" action="options.php">
+                hello world
+            </form>
+        </div> <?php
+
+        
+    }
+
+    	
+    
 
     // // Our code will go here
 };
