@@ -18,6 +18,8 @@ import restaurantsearch from './components/restaurantsearch'
 import foo from './components/foo'
 import restaurantresult from './components/restaurantresult'
 import datepicker from './components/datepicker'
+import mapbox from './components/mapbox'
+
 
 
 Vue.use(Vuex)
@@ -25,6 +27,7 @@ Vue.component("VueSlickCarousel", require("vue-slick-carousel"));
 Vue.component("restaurant", restaurant);
 Vue.component("restaurantsearch", restaurantsearch);
 Vue.component('restaurantresult', restaurantresult);
+Vue.component('mapbox', mapbox);
 Vue.component("event", event);
 Vue.component("slider", slider);
 Vue.use(VCalendar, {
@@ -319,13 +322,15 @@ new Vue({
 	components: {
 		event, 
 		eventslider,
+		mapbox, 
 		slider, 
 		restaurant, 
 		datepicker,
 		foo,
 		restaurantsearch,
 		restaurantresult,
-		VueSlickCarousel, 
+		VueSlickCarousel,
+		
 	},
 
 	data() {

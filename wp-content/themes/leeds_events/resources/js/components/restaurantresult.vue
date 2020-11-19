@@ -85,8 +85,8 @@
 				</svg> 
 				<h2 class="inline text-xl">Details</h2>
 				<div class="bg-white px-5 py-5 mt-5 rounded-lg">
-					<div id='map' class="w-full h-64 bg-black text-white center">
-						map
+					<div class="w-full h-64 bg-black text-white center">
+						<mapbox></mapbox>
 					</div>
 					<div class="mt-2 mx-2 my-5">
 						<svg fill="none" class='inline' viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -240,6 +240,7 @@
         
         methods: {
 			
-		},	
-	};
+			
+			},	
+	};	
 </script>

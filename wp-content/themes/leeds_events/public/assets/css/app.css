@@ -21657,6 +21657,11 @@ p {
   margin: 0;
 }
 
+.basemap {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
