@@ -6,7 +6,19 @@
 import mapboxgl from "mapbox-gl";
 
 export default {
+props: {
+		lat:{
+			
+			required: true,
+		},
+		long:{
+			
+			required: true,
+		},
+	},
+
   name: "BaseMap",
+
   data() {
     return {
 		accessToken: 'pk.eyJ1IjoidG9tb3N3aWxsaXMiLCJhIjoiY2tocDNxNjhkMGQyMDJ5bHRkdXFsMHhnNCJ9.nMuqBcvQo0btaa3G3uBN6w',
@@ -18,15 +30,12 @@ export default {
     this.map = new mapboxgl.Map({
       container: "mapContainer",
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [-1.54917, 53.79972],
-      zoom: 12,
-      maxBounds: [
-        [-1.800362, 53.719309],
-        [-1.161587, 53.955164],
-      ],
+      center: [parseFloat(this.$props.lat), parseFloat(this.$props.long)],
+      zoom: 14,
+     
 	});
 new mapboxgl.Marker()
-	.setLngLat([-1.54917, 53.79972])
+	.setLngLat([parseFloat(this.$props.lat), parseFloat(this.$props.long)])
 	.addTo(this.map);
   },
 };
