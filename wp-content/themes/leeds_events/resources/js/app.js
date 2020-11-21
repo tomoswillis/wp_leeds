@@ -19,6 +19,7 @@ import foo from './components/foo'
 import restaurantresult from './components/restaurantresult'
 import datepicker from './components/datepicker'
 import mapbox from './components/mapbox'
+import searchresult from './components/searchresult'
 
 
 
@@ -323,6 +324,7 @@ new Vue({
 		event, 
 		eventslider,
 		mapbox, 
+		searchresult,
 		slider, 
 		restaurant, 
 		datepicker,
