@@ -115,8 +115,7 @@ class Smashing_Fields_Plugin {
         }
     }
 
-
-    // **************************************STANDARD PAGE******************************
+// **************************************STANDARD PAGE******************************
     public function create_plugin_page() {
         // Add the menu item and page
         $page_title = 'Mapbox Search';
@@ -133,6 +132,7 @@ class Smashing_Fields_Plugin {
 
     public function plugin_page_content() { 
         $mapData = new mapService;
+        $query = get_option('our_location_field');
         
         ?>
         <div class="wrap">
@@ -143,13 +143,13 @@ class Smashing_Fields_Plugin {
                     do_settings_sections( 'mapbox_search' );?>
                     <h4>Location Name</h4>
                     <?php
-                        echo $mapData->getLocationName(get_option('our_location_field')); ?>
+                        echo $mapData->getLocationName($query); ?>
                         <h4>Latitude</h4>
                     <?php
-                        echo $mapData->getLat(get_option('our_location_field'));?>
+                        echo $mapData->getLat($query);?>
                         <h4>Longitude</h4>
                     <?php 
-                        echo $mapData->getLong(get_option('our_location_field'));
+                        echo $mapData->getLong($query);
                         submit_button('Get Coordinates');
                 ?>
             </form>
@@ -206,7 +206,7 @@ class Smashing_Fields_Plugin {
     // // Our code will go here
 };
 
-
+// **************************************MAP SERVICE*********************************
 class MapService {
 
     function __construct(){
