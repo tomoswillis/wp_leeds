@@ -4,11 +4,14 @@ get_header();
 ?>
 
 <?php 
+
+$text = ' ';
+$type = 'restaurant';
+
      if($_GET['search_text'] && !empty($_GET['search_text']))
 	 {
 		 $text = $_GET['search_text'];
 	 }
-   $type = 'restaurant';
 
 ?>
 
@@ -43,8 +46,8 @@ get_header();
 		$query = new WP_Query($args);
 		while($query -> have_posts()) : $query -> the_post();
     ?>
-        <div class="post clearfix">
-			<restaurantsearch :postdata='<?php echo json_encode(get_fields()); ?>' url='<?php echo get_permalink() ?>' class=""></restaurantsearch>
+        <div class="post inline">
+			<restaurantsearch :postdata='<?php echo json_encode(get_fields()); ?>' url='<?php echo get_permalink() ?>' class="inline-block align-top"></restaurantsearch>
             
         </div>    
     <?php endwhile; wp_reset_query(); ?>
