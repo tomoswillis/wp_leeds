@@ -2,7 +2,7 @@
 <div class="mt-10">
 	
 	<div class="text-3xl mx-8 font-bold pt-5 text-gray-600 flex items-center flex-wrap">
-		<h1>{{$props.current_post.restaurant_name}}: {{$props.current_post.location.city}}</h1>
+		<h1>{{$props.current_post.name}}: {{$props.current_post.location.city}}</h1>
 		<div class="ml-5">
 			<div>
 				<div class="flex">
@@ -32,7 +32,7 @@
 		<div class=" xl:flex xl:m-5 xl:justify-between xl:px-5 ">
 			<div class="px-5 pt-5 mt-5 md:flex xl:w-3/5 ">
 				<div class="md:mr-5">
-					<img :src="$props.current_post.restaurant_image.url" alt="rest thumbnail">
+					<img :src="$props.current_post.image.url" alt="rest thumbnail" class="rounded-lg">
 				</div>
 				<div class="xl:w-4/5">
 					<p class="text-orange-500 my-2">{{data.category}}</p>
