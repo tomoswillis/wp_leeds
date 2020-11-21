@@ -10,46 +10,33 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main mb-12 mx-2">
 
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'leeds_events' ); ?></h1>
+			<header class="text-center">
+			<h1 class="text-5xl mt-10"> 404 </h1>
+				<h1 class="text-3xl "> Oh no! Looks like we can't find what you were looking for! </h1>
+				<h3 class="text-lg mt-10"> We will work on this, mean while you can use the rest of out site </h3>
 			</header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'leeds_events' ); ?></p>
+			<div class="page-content text-center items-center">
 
-					<?php
-					get_search_form();
+				<form role="search" method="get" id="searchform"
+						class="searchform text-center mb-10" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<div class="">
+							<div class="shadow-md px-2 my-5 flex justify-between rounded-lg center sm:w:-2/5 lg:w-1/3">
+								<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" class="bg-transparent w-full pl-2">
+								<button class="bg-orange-500 w-8 h-8 pt-1 rounded-md my-2 text-white" type="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button' ); ?>" >
+									<span class="material-icons">
+										search
+									</span>
+								</button>
+							</div>
+						</div>
+					</form>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					<img src='<?php echo get_template_directory_uri()?>/public/static/images/404.jpg' alt="" class='mt-40 w-3/12 mb-5 center'>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'leeds_events' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$leeds_events_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'leeds_events' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$leeds_events_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
