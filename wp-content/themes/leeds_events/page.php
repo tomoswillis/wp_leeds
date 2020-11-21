@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main  p-5">
 
 		<?php
 		while ( have_posts() ) :
@@ -29,10 +29,9 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+
+		the_content();
 		?>
-
-		standard page
-
 	</main><!-- #main -->
 
 <?php
