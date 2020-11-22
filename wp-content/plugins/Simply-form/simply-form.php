@@ -153,18 +153,16 @@ function simply_contact_form() {
 
     $content = '';
 
-    $content .= '<h2 class="text-xl font-light">Contact Us Form</h2>';
-
     $content .= '<form class="sm:px-2 lg:px-5" method="post" action="http://localhost/wordpress/thank-you/">';
 
     $content .= '<label for="user_name" class="font-light text-lg">Name</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2" type="text" name="user_name" placeholder="Please Enter Your Name"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="text" name="user_name" placeholder="Please Enter Your Name"/>';
 
     $content .= '<label for="user_email" class="font-light text-lg">Email</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2" type="email" name="user_email" placeholder="Please Enter Your Email"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="email" name="user_email" placeholder="Please Enter Your Email"/>';
 
     $content .= '<label for="user_content" class="font-light text-lg">Content</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2" type="textarea" name="user_content"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="textarea" name="user_content"/>';
 
     $content .= '<input type="submit" name="simply_contact_submit" value="Send" class="l-button bg-orange-400 py-2  text-white w-1/3 text-center rounded-lg text-sm my-2">';
 
