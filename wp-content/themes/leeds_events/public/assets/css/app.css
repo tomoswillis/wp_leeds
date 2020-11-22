@@ -21653,13 +21653,76 @@ video {
   cursor: pointer;
 }
 
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
 p {
   margin: 0;
+  font-weight: 300;
+}
+
+label {
+  font-weight: 300;
+  font-size: 1.125rem;
+}
+
+main {
+  min-height: 100%;
 }
 
 .basemap {
   width: 100%;
   height: 100%;
+}
+
+.footerNav ul > li {
+  margin: .5rem 0;
+}
+
+.headerNav ul {
+  display: flex;
+  padding: .5rem 1rem;
+  justify-content: space-around;
+}
+
+.homeSearch {
+  border-bottom: 2px solid #ffb03a;
+  -webkit-animation: searchShadow 3s infinite;
+          animation: searchShadow 3s infinite;
+  text-align: right;
+}
+
+.homeSearch::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.homeSearch:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.homeSearch::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+@-webkit-keyframes searchShadow {
+  50% {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes searchShadow {
+  50% {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+  }
 }
 
 @media (min-width: 640px) {

@@ -57,6 +57,7 @@ if ( ! function_exists( 'leeds_events_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'leeds_events' ),
+				'menu-2' => esc_html__( 'Footer', 'leeds_events' ),
 			)
 		);
 

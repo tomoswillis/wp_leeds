@@ -36,6 +36,10 @@ get_header();
 		</div>
 		<!-- main body -->
 		<div id="app" class="sm:mx-5 md:mx-0 my-10">
+
+			<div class="homeSearchLocation text-right mx-10 mb-8">
+				<input type="text" placeholder="search site" class="homeSearch w-2/3 bg-transparent text-3xl px-5">
+			</div>
 			<!-- events component -->
 			<div>
 				<h2 class="text-2xl mb-5 ml-5">Upcoming Events</h2>

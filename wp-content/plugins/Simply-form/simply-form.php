@@ -119,28 +119,40 @@ class simply_form_widget {
 
         global $wpdb;
         // $result = $wpdb->get_results("select * from wp_simply_form_emails");
-        $result = $wpdb->get_results("SELECT * FROM wp_simply_form_emails WHERE ID = (SELECT MAX(id) FROM wp_simply_form_emails)")
+        $result = $wpdb->get_results('SELECT * FROM wp_simply_form_emails ORDER BY id DESC LIMIT 3;')
         
         ?>
         <div class="wrap">
-            <p>Is this still the email you would like the emails to be sent to? : <strong><?php echo get_option('user_email_address') ?></strong> If not, please update in <a href="http://localhost/wordpress/wp-admin/options-general.php?page=simply_form"> settings.</a> 
+            <p>Is this still the email you would like the emails to be sent to? : <strong><?php echo get_option('user_email_address') ?></strong> If not, please update in <a href="<?php echo admin_url()?>/options-general.php?page=simply_form"> settings.</a> 
         </p>
 
             <div class="">
 
-                <h3 class="text-orange-100"> <strong> Latest contact Queries </strong></h3>
+                <h3 class="text-orange-100"> <strong> 3 Latest contact Queries </strong></h3>
+        
+                        <div>
+                            <?php 
+                                 foreach ($result as $email){ ?> 
+								  <div style=" border: 1px solid grey; padding: 1rem; margin: 1rem 0rem ; ">
+									<div>
+                                        <h3 style="display: inline;"><strong>Name:</strong></h3>
+                                       <div style="display: inline;"> <?php echo $email->name; ?> </div>
+                                    </div>
+									<div>
+                                        <h3 style="display: inline;"><strong>Email:</strong></h3>
+                                       <div style="display: inline;"> <a href="mailto:<?php echo $email->email; ?>"><?php echo $email->email; ?></a> </div>
+                                    </div>
+                                    <div >
+                                       <p> <?php echo $email->content; ?> </p>
+                                    </div>
+                                 </div>
+								
+                            <?php  
+                            } ?>
 
-                <table>
-                <?php 
-                foreach ($result as $email){ ?> 
-                    <tr>
-                        <td> <?php echo $email->name; ?> </td>
-                        <td> <?php echo $email->email; ?> </td>
-                        <td> <?php echo $email->content; ?> </td>
-                        <?php  
-                        } ?>
-                    </tr>
-                </table>
+                        </div>
+
+                
             </div>
         
         </div> <?php
@@ -153,16 +165,16 @@ function simply_contact_form() {
 
     $content = '';
 
-    $content .= '<form class="sm:px-2 lg:px-5" method="post" action="http://localhost/wordpress/thank-you/">';
+    $content .= '<form class="sm:px-2 mt-5 lg:px-5" method="post" action="">';
 
     $content .= '<label for="user_name" class="font-light text-lg">Name</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="text" name="user_name" placeholder="Please Enter Your Name"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="text" required name="user_name" placeholder="Please Enter Your Name"/>';
 
     $content .= '<label for="user_email" class="font-light text-lg">Email</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="email" name="user_email" placeholder="Please Enter Your Email"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="email" required name="user_email" placeholder="Please Enter Your Email"/>';
 
     $content .= '<label for="user_content" class="font-light text-lg">Content</label>';
-    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="textarea" name="user_content"/>';
+    $content .= '<input class="mb-5 w-full border border-grey-200 border-solid rounded-lg py-2 pl-2" type="textarea" required name="user_content"/>';
 
     $content .= '<input type="submit" name="simply_contact_submit" value="Send" class="l-button bg-orange-400 py-2  text-white w-1/3 text-center rounded-lg text-sm my-2">';
 
@@ -184,7 +196,7 @@ function simply_contact_form_capture() {
 
         $to = get_option('user_email_address');
         $subject = 'Leeds-events contact form';
-        $message = $name. ' - '. $email. " - ". $content;
+        $message = $name. ' - '. $email. ' - '. $content;
 
 
         // TODO: remove var_dump for PROD

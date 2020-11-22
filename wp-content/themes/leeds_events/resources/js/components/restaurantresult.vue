@@ -94,7 +94,7 @@
 						<svg fill="none" class='inline' viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
 							<path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M12 4C8.68629 4 6 6.68629 6 10C6 11.0279 6.36394 12.1768 6.9815 13.3678C7.59457 14.5501 8.4236 15.7092 9.27193 16.7393C10.1178 17.7664 10.9665 18.6457 11.6048 19.2688C11.7483 19.4089 11.8809 19.5357 12 19.6481C12.1191 19.5357 12.2517 19.4089 12.3952 19.2688C13.0335 18.6457 13.8822 17.7664 14.7281 16.7393C15.5764 15.7092 16.4054 14.5501 17.0185 13.3678C17.6361 12.1768 18 11.0279 18 10C18 6.68629 15.3137 4 12 4ZM12 21C11.3492 21.7593 11.349 21.7591 11.3488 21.7589L11.3467 21.7571L11.3417 21.7528L11.3241 21.7376C11.3092 21.7246 11.2878 21.7059 11.2604 21.6818C11.2055 21.6334 11.1266 21.5632 11.0269 21.4727C10.8277 21.2918 10.5454 21.0296 10.2077 20.6999C9.5335 20.0418 8.63218 19.1086 7.72807 18.0107C6.8264 16.9158 5.90543 15.6374 5.206 14.2884C4.51106 12.9482 4 11.4721 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.4721 19.4889 12.9482 18.794 14.2884C18.0946 15.6374 17.1736 16.9158 16.2719 18.0107C15.3678 19.1086 14.4665 20.0418 13.7923 20.6999C13.4546 21.0296 13.1723 21.2918 12.9731 21.4727C12.8734 21.5632 12.7945 21.6334 12.7396 21.6818C12.7122 21.7059 12.6908 21.7246 12.6759 21.7376L12.6583 21.7528L12.6533 21.7571L12.6517 21.7585C12.6515 21.7586 12.6508 21.7593 12 21ZM12 21L11.3488 21.7589C11.7233 22.0799 12.2763 22.0802 12.6508 21.7593L12 21ZM12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8ZM8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10C16 12.2091 14.2091 14 12 14C9.79086 14 8 12.2091 8 10Z" fill="#282828"></path>
 						</svg> 
-						<h2 class="inline">{{$props.current_post.location.line_one}} {{$props.current_post.location.line_two}} {{$props.current_post.location.line_three}} {{$props.current_post.location.city}} {{$props.current_post.location.postcode}}</h2>
+						<p class="inline">{{$props.current_post.location.line_one}} {{$props.current_post.location.line_two}} {{$props.current_post.location.line_three}} {{$props.current_post.location.city}} {{$props.current_post.location.postcode}}</p>
 					</div>
 
 
@@ -103,7 +103,7 @@
 						<svg fill="none" viewBox="0 0 24 24" class='inline' height="24" width="24" xmlns="http://www.w3.org/2000/svg">
 						<path xmlns="http://www.w3.org/2000/svg" d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 6C12.5523 6 13 6.44772 13 7V11.5858L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L11.2929 12.7071C11.1054 12.5196 11 12.2652 11 12V7C11 6.44772 11.4477 6 12 6Z" fill="#0D0D0D"></path>
 						</svg>
-						<h2 class="inline">{{$props.current_post.opening_time}} - {{$props.current_post.closing_time}}</h2>
+						<p class="inline">{{$props.current_post.opening_time}} - {{$props.current_post.closing_time}}</p>
 					</div>
 
 
@@ -113,7 +113,7 @@
 							<path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M6 5C6 3.89543 6.89543 3 8 3H16C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H8C6.89543 21 6 20.1046 6 19V5ZM16 5H8V19H16V5Z" fill="#282828"></path>
 							<path xmlns="http://www.w3.org/2000/svg" d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#282828"></path>
 						</svg>
-						<h2 class="inline"> <a :href="'tel:' + $props.current_post.contact_information.phone">{{$props.current_post.contact_information.phone_number}} </a></h2>
+						<p class="inline"> <a :href="'tel:' + $props.current_post.contact_information.phone">{{$props.current_post.contact_information.phone_number}} </a></p>
 					</div>
 
 
@@ -123,7 +123,7 @@
 							<svg fill="none" class="inline" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
 								<path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6ZM5.51859 6L12 11.6712L18.4814 6H5.51859ZM20 7.32877L12.6585 13.7526C12.2815 14.0825 11.7185 14.0825 11.3415 13.7526L4 7.32877V18H20V7.32877Z" fill="#282828"></path>
 							</svg>
-							<h2 class="inline">Email</h2>
+							<p class="inline">Email</p>
 							<svg fill="none" class="inline ease-in-out transform hover:translate-x-2
 						duration-150" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
 								<path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C19.8946 11.4804 20 11.7348 20 12C20 12.2652 19.8946 12.5196 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13L5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11L16.5858 11L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z" fill="#f6ad55"></path>

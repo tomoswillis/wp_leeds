@@ -16,7 +16,7 @@ get_header();
 			<header class="text-center">
 			<h1 class="text-5xl mt-10"> 404 </h1>
 				<h1 class="text-3xl "> Oh no! Looks like we can't find what you were looking for! </h1>
-				<h3 class="text-lg mt-10"> We will work on this, mean while you can use the rest of our site </h3>
+				<p class="text-lg mt-10"> We will work on this, mean while you can use the rest of our site </p>
 			</header><!-- .page-header -->
 
 			<div class="page-content text-center items-center">

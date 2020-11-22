@@ -36,7 +36,7 @@
 
 		<nav id="site-navigation" class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
 			
-			<div class="justify-around">
+			<div class="justify-around headerNav">
 				<?php
 				wp_nav_menu(
 					array(

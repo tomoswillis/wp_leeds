@@ -13260,7 +13260,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "inline" }, [
+                  _c("p", { staticClass: "inline" }, [
                     _vm._v(
                       _vm._s(_vm.$props.current_post.location.line_one) +
                         " " +
@@ -13300,7 +13300,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "inline" }, [
+                  _c("p", { staticClass: "inline" }, [
                     _vm._v(
                       _vm._s(_vm.$props.current_post.opening_time) +
                         " - " +
@@ -13345,7 +13345,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("h2", { staticClass: "inline" }, [
+                  _c("p", { staticClass: "inline" }, [
                     _c(
                       "a",
                       {
@@ -13404,7 +13404,7 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("h2", { staticClass: "inline" }, [_vm._v("Email")]),
+                      _c("p", { staticClass: "inline" }, [_vm._v("Email")]),
                       _vm._v(" "),
                       _c(
                         "svg",
