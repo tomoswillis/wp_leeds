@@ -317,6 +317,11 @@ const store = new Vuex.Store({
 import { mapGetters } from 'vuex';
 
 
+
+
+
+
+
 new Vue({
 	el: '#app',
 	store,

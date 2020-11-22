@@ -2345,6 +2345,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2564,6 +2566,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var data = {
+  open: '01:00:00',
+  close: '13:00:00'
+};
+var now = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].local();
+var open = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].fromISO(data.open);
+var close = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].fromISO(data.close);
+
+if (close < open) {
+  close = close.plus({
+    days: 1
+  });
+}
+
+var opensHours = open.diff(now, 'hours').hours;
+var closeHours = close.diff(now, 'hours').hours;
+console.log({
+  open: {
+    display: open.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].TIME_24_SIMPLE),
+    soon: opensHours > 0 && opensHours < 1
+  },
+  close: {
+    display: close.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].TIME_24_SIMPLE),
+    soon: closeHours > 0 && closeHours < 1
+  }
+});
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     current_post: {
@@ -13223,6 +13271,40 @@ var render = function() {
                         _vm._s(_vm.$props.current_post.location.city) +
                         " " +
                         _vm._s(_vm.$props.current_post.location.postcode)
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mx-2 my-5" }, [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "inline",
+                      attrs: {
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        height: "24",
+                        width: "24",
+                        xmlns: "http://www.w3.org/2000/svg"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          d:
+                            "M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM12 6C12.5523 6 13 6.44772 13 7V11.5858L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L11.2929 12.7071C11.1054 12.5196 11 12.2652 11 12V7C11 6.44772 11.4477 6 12 6Z",
+                          fill: "#0D0D0D"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "inline" }, [
+                    _vm._v(
+                      _vm._s(_vm.$props.current_post.opening_time) +
+                        " - " +
+                        _vm._s(_vm.$props.current_post.closing_time)
                     )
                   ])
                 ]),
