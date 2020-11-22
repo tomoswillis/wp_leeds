@@ -25,6 +25,7 @@
         </div>
         <div class="md:w-1/3 pl-5 pr-5">
             <h1 class="text-2xl text-orange-400">About Us</h1>
+            <?php  echo do_shortcode('[simply_form]');?>
         </div>
         <div class="md:w-1/3 pr-5">
             <h1 class="text-2xl text-orange-400"> Site Map</h1>
