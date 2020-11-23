@@ -32,7 +32,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'leeds_events' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header z-50">
 
 		<nav id="site-navigation" class="md:w-1/2 bg-white fixed z-10 inset-0 h-10 center rounded-b-lg bg-opacity-75">
 			

@@ -9,7 +9,6 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 
-
 import event from './components/event'
 import slider from './components/slider'
 import eventslider from './components/eventslider'
@@ -282,7 +281,7 @@ const store = new Vuex.Store({
 		},
 
 		getManyRestaurants: (state) => (data) => {
-			state.restaurantsPosts.filter(function(e) {
+			return state.restaurantsPosts.filter(function(e) {
 				return data.indexOf(e.id) != -1;
 			})
 		},
@@ -290,7 +289,7 @@ const store = new Vuex.Store({
 	// Actions are something that goes and does something e.g get data
 	actions: {
 		// load posts gets all restaurant posts from the WP rest api and then commits it to updatePosts (Mutation) with the json as a payload
-		loadPosts({ commit }) {
+		async loadPosts({ commit }) {
 			axios
 				.get('http://localhost/wordpress/wp-json/wp/v2/restaurant')
 				.then(data => {
@@ -316,12 +315,6 @@ const store = new Vuex.Store({
 
 import { mapGetters } from 'vuex';
 
-
-
-
-
-
-
 new Vue({
 	el: '#app',
 	store,
@@ -342,7 +335,7 @@ new Vue({
 
 	data() {
 		return{
-			idData: ['125', '119']
+			idData: ['125', '119', '125']
 		}
 	},
 
@@ -352,28 +345,41 @@ new Vue({
 			
 		  ]),
 
+		  allPosts() {
+			//  if (! this.$store.state.restaurantPosts){
+			// 	return ['error']
+			// 	} else{
+			// 	return this.$store.state.restaurantsPosts;
+			// 	// return this.$store.state.restaurantsPosts.filter(function(e) {
+			// 	// 	return this.$data.idData.indexOf(e.id) != -1;
+			// 	// })
+			//  	}
+		// return	this.$store.getters.getManyRestaurants('178');
+
+		return this.$data.idData.map((data)=>{  
+            return this.$store.getters.getManyRestaurants(data)[0]['acf']; 
+        }) 
+	
+			
+			
+		},
+
 		restaurantPosts() {
 			return this.$store.state.restaurantsPosts
 		},
-
-		allPosts() {
-			setTimeout(function(){ if (! this.$store.state.restaurantPosts){
-				return ['error']
-			}
-			console.log(this.$store.state);
-			return this.$store.state.restaurantsPosts.filter(function(e) {
-				return this.$data.idData.indexOf(e.id) != -1;
-			}) }, 3000);
-			
-		}
 		
 	},
 
 	method:{
+
 	},
 
 	mounted() {
 		this.$store.dispatch('loadPosts')
+
+	
+		
 	},
+
 }); 
 
