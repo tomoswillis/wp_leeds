@@ -34,9 +34,9 @@ props: {
       zoom: 14,
      
 	});
-new mapboxgl.Marker()
-	.setLngLat([parseFloat(this.$props.lat), parseFloat(this.$props.long)])
-	.addTo(this.map);
+  new mapboxgl.Marker()
+    .setLngLat([parseFloat(this.$props.lat), parseFloat(this.$props.long)])
+    .addTo(this.map);
   },
 };
 </script>

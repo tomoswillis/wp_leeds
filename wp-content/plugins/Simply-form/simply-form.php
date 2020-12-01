@@ -212,7 +212,30 @@ function simply_contact_form_capture() {
         $table_name = 'wp_simply_form_emails';
 
         // TODO: Protect against SQL injection
-        $result =  $wpdb->insert($table_name, $data, $format = NULL);
+ 
+
+        if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name)
+        {
+            $result =  $wpdb->insert($table_name, $data, $format = NULL);
+        }
+        else
+        {
+            // require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
+            // dbDelta(" CREATE TABLE `{$wpdb->base_prefix}simply_form_email` (
+            //     id int NOT NULL AUTO_INCREMENT,
+            //     name varchar(255) NOT NULL,
+            //     email varchar(255) NOT NULL,
+            //     content varchar(255) NOT NULL,
+            //     PRIMARY KEY  (id)
+            // );");
+
+            // var_dump('error');
+
+            // $result =  $wpdb->insert($table_name, $data, $format = NULL);
+        }
+
+       
     }
 }
 

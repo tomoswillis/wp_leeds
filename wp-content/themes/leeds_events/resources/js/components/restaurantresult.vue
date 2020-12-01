@@ -227,10 +227,7 @@
 		Other Restaurants You Might Like
 	</h2>
 	<slider 
-		slug-one='manahatta'
-		slug-two='box'
-		slug-three='byron' 
-		slug-four='bills'
+		:id="$props.current_post.simular_resturants"
 		class="lg:mt-5 lg:ml-16">
 	</slider>
 </div>

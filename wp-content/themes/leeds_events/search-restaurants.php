@@ -5,6 +5,7 @@ get_header();
 
 <?php 
 
+// restaurant search results have information specific to restaurants, this template allows for that data to be displayed
 $text = ' ';
 $type = 'restaurant';
 
@@ -40,8 +41,6 @@ $type = 'restaurant';
             'post_type' => $type,
             'posts_per_page' => -1,
             's' => $text,
-            /*'exact' => true,
-            'sentence' => true*/
 		);
 		$query = new WP_Query($args);
 		while($query -> have_posts()) : $query -> the_post();

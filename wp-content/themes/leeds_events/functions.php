@@ -187,6 +187,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // ****************** functions ***************************
 
+
+// registers complied CSS and JS to be rendered in the head
 function scripts()
 {
 	wp_register_style('style', get_template_directory_uri() . '/public/assets/css/app.css', [], 1, 'all');
@@ -213,12 +215,6 @@ function get_restaurants(){
 		'post_type'			=> 'restaurant'
 	));
 }
-
-function home_page_recommended_restaurants()
-{
-	
-}
-
 
 //adding action for triggering function call
 add_action('admin_menu', 'post_remove'); 

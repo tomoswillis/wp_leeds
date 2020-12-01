@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -2178,76 +2190,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/foo.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/foo.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {},
-  data: function data() {
-    return {};
-  },
-  computed: {
-    restaurants: function restaurants() {
-      return Object.keys(this.$store.state.restaurants);
-    }
-  },
-  methods: {}
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/mapbox.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/mapbox.vue?vue&type=script&lang=js& ***!
@@ -2319,16 +2261,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    slug: String
+    id: Number
   },
   data: function data() {
     return {};
   },
   computed: {
-    data: function data() {
-      return this.$store.state.restaurants[this.slug];
+    // using the props id to get the data for the post. The ID corrilates to the id of the post
+    post: function post() {
+      return this.$store.getters.getRestaurantPost(this.id);
     }
   },
   methods: {}
@@ -2347,9 +2292,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
 /* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
 //
 //
 //
@@ -2783,6 +2725,108 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    'id': Array
+  },
+  data: function data() {
+    var _settings;
+
+    return {
+      settings: (_settings = {
+        "infinite": true,
+        "speed": 500,
+        "slidesToShow": 5,
+        "slidesToScroll": 3,
+        "initialSlide": 2,
+        'arrows': false,
+        "dots": true,
+        "dotsClass": "slick-dots custom-dot-class"
+      }, _defineProperty(_settings, "arrows", true), _defineProperty(_settings, "centerMode", true), _defineProperty(_settings, "responsive", [{
+        "breakpoint": 2000,
+        "settings": {
+          "slidesToShow": 5,
+          "slidesToScroll": 3,
+          "infinite": true,
+          "centerMode": true
+        }
+      }, {
+        "breakpoint": 1280,
+        "settings": {
+          "slidesToShow": 3,
+          "slidesToScroll": 3,
+          "infinite": true,
+          "centerMode": true
+        }
+      }, {
+        "breakpoint": 775,
+        "settings": {
+          "infinite": false,
+          "slidesToShow": 1,
+          "slidesToScroll": 1,
+          "speed": 500,
+          "rows": 2,
+          "slidesPerRow": 1,
+          "centerMode": true,
+          "variableWidth": true
+        }
+      }, {
+        "breakpoint": 320,
+        "settings": {
+          "infinite": true,
+          "slidesToShow": 1,
+          "slidesToScroll": 1,
+          "speed": 500,
+          "rows": 2,
+          "slidesPerRow": 1,
+          "centerMode": false
+        }
+      }]), _settings)
+    };
+  },
+  computed: {
+    foo: function foo() {
+      return this.slugOne;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/weather.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/weather.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2796,65 +2840,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    'homepage-requested-posts-id': Array,
-    'slug-one': String,
-    'slug-two': String,
-    'slug-three': String,
-    'slug-four': String
-  },
+  props: {},
   data: function data() {
     return {
-      settings: {
-        "infinite": false,
-        "speed": 500,
-        "slidesToShow": 5,
-        "slidesToScroll": 3,
-        "initialSlide": 0,
-        'arrows': false,
-        "dots": true,
-        "responsive": [{
-          "breakpoint": 2000,
-          "settings": {
-            "slidesToShow": 5,
-            "slidesToScroll": 3,
-            "infinite": true
-          }
-        }, {
-          "breakpoint": 1280,
-          "settings": {
-            "slidesToShow": 3,
-            "slidesToScroll": 3,
-            "infinite": true
-          }
-        }, {
-          "breakpoint": 775,
-          "settings": {
-            "infinite": true,
-            "slidesToShow": 2,
-            "slidesToScroll": 1,
-            "speed": 500,
-            "rows": 2,
-            "slidesPerRow": 1
-          }
-        }, {
-          "breakpoint": 320,
-          "settings": {
-            "infinite": true,
-            "slidesToShow": 1,
-            "slidesToScroll": 1,
-            "speed": 500,
-            "rows": 2,
-            "slidesPerRow": 1
-          }
-        }]
-      }
+      temp: 0,
+      weatherIcon: 'clouds'
     };
   },
   computed: {
-    foo: function foo() {
-      return this.slugOne;
+    currentWeather: function currentWeather() {
+      var _this = this;
+
+      setTimeout(function () {
+        var i = _this.$store.state.weather.weather[0].main;
+        _this.$data.weatherIcon = i.toLowerCase();
+      }, 2000);
+    },
+    // gets the temp data from the store and converts it to celcius from Kelvin and rounds it to 2 decimal places. set time out is used as the data isnt avalible directly after load
+    currentTemp: function currentTemp() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        var i = Math.round((_this2.$store.state.weather.main.temp - 273.15) * 10) / 10;
+        _this2.$data.temp = i;
+      }, 2000);
     }
+  },
+  methods: {},
+  mounted: function mounted() {
+    this.currentTemp;
+    this.currentWeather;
   }
 });
 
@@ -11553,6 +11568,765 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : undefined
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  Function("r", "regeneratorRuntime = r")(runtime);
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/setimmediate/setImmediate.js":
 /*!***************************************************!*\
   !*** ./node_modules/setimmediate/setImmediate.js ***!
@@ -12577,149 +13351,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/foo.vue?vue&type=template&id=ec288c6a&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/foo.vue?vue&type=template&id=ec288c6a& ***!
-  \******************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: " md:mx-10" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: " rounded-lg" }, [
-      _vm._m(1),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5 flex flex-wrap justify-center" },
-        _vm._l(_vm.restaurants, function(restaurant) {
-          return _c(
-            "div",
-            [
-              _c("restaurantsearch", { attrs: { slug: restaurant } }),
-              _vm._v(" "),
-              _c("restaurantsearch", { attrs: { slug: restaurant } })
-            ],
-            1
-          )
-        }),
-        0
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "mx-10 my-10 md:flex justify-between items-baseline md:my-2"
-      },
-      [
-        _c("div", [
-          _c("h1", { staticClass: "text-3xl mt-10" }, [
-            _vm._v("All Restaurants")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "md:w-2/5" }, [
-          _c(
-            "div",
-            {
-              staticClass: "shadow-md px-2 my-5 flex justify-between rounded-lg"
-            },
-            [
-              _c("input", {
-                staticClass: "bg-transparent w-4/5 pl-2",
-                attrs: { type: "text", placeholder: "Search" }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "bg-orange-500 w-8 h-8 pt-1 rounded-md my-2 text-white"
-                },
-                [
-                  _c("span", { staticClass: "material-icons" }, [
-                    _vm._v("\n\t\t\t\t\t\tsearch\n\t\t\t\t\t")
-                  ])
-                ]
-              )
-            ]
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "flex ml-10" }, [
-        _c(
-          "div",
-          { staticClass: "p-2 bg-white mt-5 rounded-md mr-5 bg-gray-200" },
-          [
-            _c(
-              "select",
-              {
-                staticClass: "bg-gray-200",
-                attrs: { name: "sort", id: "sort" }
-              },
-              [
-                _c("option", { attrs: { value: "nameasc" } }, [
-                  _vm._v("Ascending")
-                ])
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "p-2 bg-white mt-5 rounded-md bg-gray-200" }, [
-          _c(
-            "select",
-            {
-              staticClass: "bg-gray-200",
-              attrs: { name: "rating", id: "rating" }
-            },
-            [
-              _c("option", { attrs: { value: "1" } }, [_vm._v("1 Star")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "2" } }, [_vm._v("2 stars")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "3" } }, [_vm._v("3 stars")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "4" } }, [_vm._v("4 stars")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "5" } }, [_vm._v("5 stars")])
-            ]
-          )
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/mapbox.vue?vue&type=template&id=a897650c&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/mapbox.vue?vue&type=template&id=a897650c& ***!
@@ -12759,41 +13390,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "px-2 pb-8 cursor-pointer" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "flex felx-wrap flex-col justify-end inline text-white bg-thumbnail rounded-xl"
-      },
-      [
-        _c("img", {
-          attrs: { src: _vm.data.thumbnail, alt: "restaurant thumbnail" }
-        }),
-        _vm._v(" "),
-        _c(
-          "h2",
-          { staticClass: "text-2xl font-bold absolute px-2 md:px-5 mb-8" },
-          [_vm._v(_vm._s(_vm.data.name))]
-        ),
-        _vm._v(" "),
-        _c("h3", { staticClass: "text-lg absolute px-2 md:px-5  mb-2" }, [
-          _vm._v(_vm._s(_vm.data.location.shortHand))
+  return _vm.post
+    ? _c("div", { staticClass: "px-2 pb-8 cursor-pointer" }, [
+        _c("a", { attrs: { href: _vm.post.link } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex flex-col justify-end inline text-white bg-thumbnail rounded-xl relative"
+            },
+            [
+              _c("img", {
+                staticClass: "rounded-lg thumbnail  h-32 object-cover relitive",
+                attrs: {
+                  src: _vm.post.acf.image.url,
+                  alt: "restaurant thumbnail"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "h2",
+                { staticClass: "ext-2xl font-bold absolute px-5 mb-8 w-30" },
+                [_vm._v(_vm._s(_vm.post.acf.name))]
+              ),
+              _vm._v(" "),
+              _c("h3", { staticClass: "text-lg absolute px-5 mb-2" }, [
+                _vm._v(_vm._s(_vm.post.acf.location.city))
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "hidden lg:block px-5 max-width-xs text-sm my-2 text-gray-700 h-20"
+              },
+              [
+                _vm._v(
+                  "\n\t\t\t\t" + _vm._s(_vm.post.acf.description) + "\n\t\t\t"
+                )
+              ]
+            )
+          ])
         ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", {}, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "hidden lg:block px-5 max-width-xs text-sm my-2 text-gray-700 h-20"
-        },
-        [_vm._v("\n\t\t\t" + _vm._s(_vm.data.description) + "\n\t\t")]
-      )
-    ])
-  ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13607,12 +14250,7 @@ var render = function() {
       _vm._v(" "),
       _c("slider", {
         staticClass: "lg:mt-5 lg:ml-16",
-        attrs: {
-          "slug-one": "manahatta",
-          "slug-two": "box",
-          "slug-three": "byron",
-          "slug-four": "bills"
-        }
+        attrs: { id: _vm.$props.current_post.simular_resturants }
       })
     ],
     1
@@ -14097,24 +14735,421 @@ var render = function() {
       _c(
         "VueSlickCarousel",
         _vm._b({}, "VueSlickCarousel", _vm.settings, false),
-        [
-          _c("restaurant", { attrs: { slug: _vm.slugOne } }),
-          _vm._v(" "),
-          _c("restaurant", { attrs: { slug: _vm.slugTwo } }),
-          _vm._v(" "),
-          _c("restaurant", { attrs: { slug: _vm.slugThree } }),
-          _vm._v(" "),
-          _c("restaurant", { attrs: { slug: _vm.slugFour } }),
-          _vm._v(" "),
-          _c("restaurant", { attrs: { slug: _vm.slugOne } }),
-          _vm._v(" "),
-          _c("restaurant", { attrs: { slug: _vm.slugTwo } })
-        ],
+        _vm._l(_vm.$props.id, function(id) {
+          return _c("restaurant", { key: id, attrs: { id: id } })
+        }),
         1
       )
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/weather.vue?vue&type=template&id=7ba29f79&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/weather.vue?vue&type=template&id=7ba29f79& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex justify-between items-baseline" }, [
+    _c("div", { staticClass: "w-3/6 px-2" }, [
+      _vm.$data.weatherIcon === "clouds"
+        ? _c("div", [
+            _c(
+              "svg",
+              {
+                staticClass: "rain",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 33.64 18.08"
+                }
+              },
+              [
+                _c("defs"),
+                _c("g", { attrs: { id: "Layer_2", "data-name": "Layer 2" } }, [
+                  _c(
+                    "g",
+                    { attrs: { id: "Layer_2-2", "data-name": "Layer 2" } },
+                    [
+                      _c("path", {
+                        staticClass: "cls-1",
+                        attrs: {
+                          d:
+                            "M27.41,6.12A5.71,5.71,0,0,0,25,6.66,8.51,8.51,0,0,0,16.82.5c-3.06,0-5.74,2.6-7.24,5a6.65,6.65,0,0,0-2.37-.44c-3.7,0-6.71,2-6.71,5.74a6.72,6.72,0,0,0,6.71,6.71H25.35c.83,0,1.33,0,2.06,0a5.73,5.73,0,1,0,0-11.46Z"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        : _vm.$data.weatherIcon === "sun"
+        ? _c("div", [
+            _c(
+              "svg",
+              {
+                staticClass: "rain",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  viewBox: "0 0 21.25 21.25"
+                }
+              },
+              [
+                _c(
+                  "defs",
+                  [
+                    _c(
+                      "radialGradient",
+                      {
+                        attrs: {
+                          id: "Super_Soft_Black_Vignette_2",
+                          cx: "10.63",
+                          cy: "10.63",
+                          r: "5.09",
+                          gradientUnits: "userSpaceOnUse"
+                        }
+                      },
+                      [
+                        _c("stop", {
+                          attrs: { offset: "0.57", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "0.8", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "1", "stop-color": "#161412" }
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _c("g", { attrs: { id: "Layer_2", "data-name": "Layer 2" } }, [
+                  _c(
+                    "g",
+                    { attrs: { id: "Layer_2-2", "data-name": "Layer 2" } },
+                    [
+                      _c("path", {
+                        staticClass: "cls-1",
+                        attrs: {
+                          d:
+                            "M10.63,6a4.6,4.6,0,1,0,4.59,4.6A4.6,4.6,0,0,0,10.63,6Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M10.47,16.64a.58.58,0,0,0-.58.58v3.45a.58.58,0,0,0,.58.58.57.57,0,0,0,.57-.58V17.22A.57.57,0,0,0,10.47,16.64Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M10.47,4.61A.57.57,0,0,0,11,4V.58A.57.57,0,0,0,10.47,0a.58.58,0,0,0-.58.58V4A.58.58,0,0,0,10.47,4.61Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M20.67,10.05H17.22a.58.58,0,1,0,0,1.15h3.45a.58.58,0,1,0,0-1.15Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M4.61,10.62A.58.58,0,0,0,4,10.05H.58a.58.58,0,1,0,0,1.15H4A.58.58,0,0,0,4.61,10.62Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M4.82,14.93,2.37,17.37a.58.58,0,0,0,0,.81.57.57,0,0,0,.82,0l2.44-2.44a.58.58,0,0,0,0-.81A.56.56,0,0,0,4.82,14.93Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M15.41,6.07l2.44-2.44A.57.57,0,1,0,17,2.82L14.6,5.26a.57.57,0,1,0,.81.81Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M15.48,15.45a.58.58,0,0,0-.81,0,.59.59,0,0,0,0,.82l2.44,2.44a.57.57,0,0,0,.82,0,.58.58,0,0,0,0-.81Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M3.3,3.27a.57.57,0,0,0-.82,0,.58.58,0,0,0,0,.81L4.93,6.53a.58.58,0,0,0,.81,0,.57.57,0,0,0,0-.82Z"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        : _vm.$data.weatherIcon === "rain"
+        ? _c("div", [
+            _c(
+              "svg",
+              {
+                staticClass: "rain",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  viewBox: "0 0 26 20.78"
+                }
+              },
+              [
+                _c(
+                  "defs",
+                  [
+                    _c(
+                      "radialGradient",
+                      {
+                        attrs: {
+                          id: "Super_Soft_Black_Vignette_2",
+                          cx: "9.46",
+                          cy: "11.23",
+                          r: "1.48",
+                          gradientUnits: "userSpaceOnUse"
+                        }
+                      },
+                      [
+                        _c("stop", {
+                          attrs: { offset: "0.57", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "0.8", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "1", "stop-color": "#161412" }
+                        })
+                      ],
+                      1
+                    ),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-2",
+                        cx: "9.38",
+                        cy: "15.88",
+                        r: "1.48",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    }),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-3",
+                        cx: "12.69",
+                        cy: "14.33",
+                        r: "1.48",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    }),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-4",
+                        cx: "12.61",
+                        cy: "18.99",
+                        r: "1.48",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    }),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-5",
+                        cx: "15.84",
+                        cy: "11.76",
+                        r: "1.48",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    }),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-6",
+                        cx: "15.76",
+                        cy: "16.42",
+                        r: "1.48",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _c("g", { attrs: { id: "Layer_2", "data-name": "Layer 2" } }, [
+                  _c(
+                    "g",
+                    { attrs: { id: "Layer_2-2", "data-name": "Layer 2" } },
+                    [
+                      _c("path", {
+                        staticClass: "cls-1",
+                        attrs: {
+                          d:
+                            "M19.54,13.54c.62,0,1,0,1.57,0a4.39,4.39,0,1,0-1.85-8.36A6.51,6.51,0,0,0,13,.5c-2.34,0-4.4,2-5.55,3.85A4.94,4.94,0,0,0,5.64,4C2.8,4,.5,5.56.5,8.4a5.14,5.14,0,0,0,4.83,5.13"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M9.51,9.43c-.6,0-1.11,1.9-1.13,2.49a1.08,1.08,0,1,0,2.16,0C10.55,11.37,10.1,9.44,9.51,9.43Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-3",
+                        attrs: {
+                          d:
+                            "M9.42,14.09c-.59,0-1.11,1.9-1.12,2.49a1.08,1.08,0,1,0,2.15,0C10.46,16,10,14.1,9.42,14.09Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-4",
+                        attrs: {
+                          d:
+                            "M12.74,12.54c-.6,0-1.11,1.89-1.12,2.49a1.08,1.08,0,0,0,2.15,0C13.78,14.47,13.33,12.55,12.74,12.54Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-5",
+                        attrs: {
+                          d:
+                            "M12.65,17.2c-.59,0-1.11,1.89-1.12,2.49a1.08,1.08,0,0,0,2.15,0C13.69,19.13,13.25,17.21,12.65,17.2Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-6",
+                        attrs: {
+                          d:
+                            "M15.82,13.55a1.08,1.08,0,0,0,1.1-1.06c0-.59-.44-2.51-1-2.52s-1.11,1.89-1.12,2.49A1.07,1.07,0,0,0,15.82,13.55Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-7",
+                        attrs: {
+                          d:
+                            "M15.8,14.62c-.59,0-1.1,1.9-1.11,2.49a1.07,1.07,0,1,0,2.14,0C16.85,16.56,16.4,14.64,15.8,14.62Z"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        : _vm.$data.weatherIcon === "clear"
+        ? _c("div", [
+            _c(
+              "svg",
+              {
+                staticClass: "clearIcon",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  viewBox: "0 0 18.81 20.26"
+                }
+              },
+              [
+                _c(
+                  "defs",
+                  [
+                    _c(
+                      "radialGradient",
+                      {
+                        attrs: {
+                          id: "Super_Soft_Black_Vignette_2",
+                          cx: "9.4",
+                          cy: "4.57",
+                          r: "7.39",
+                          gradientUnits: "userSpaceOnUse"
+                        }
+                      },
+                      [
+                        _c("stop", {
+                          attrs: { offset: "0.57", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "0.8", "stop-color": "#161412" }
+                        }),
+                        _c("stop", {
+                          attrs: { offset: "1", "stop-color": "#161412" }
+                        })
+                      ],
+                      1
+                    ),
+                    _c("radialGradient", {
+                      attrs: {
+                        id: "Super_Soft_Black_Vignette_2-2",
+                        cx: "7.39",
+                        cy: "15.68",
+                        r: "6.14",
+                        "xlink:href": "#Super_Soft_Black_Vignette_2"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _c("g", { attrs: { id: "Layer_2", "data-name": "Layer 2" } }, [
+                  _c(
+                    "g",
+                    { attrs: { id: "Layer_2-2", "data-name": "Layer 2" } },
+                    [
+                      _c("path", {
+                        staticClass: "cls-1",
+                        attrs: {
+                          d:
+                            "M18.81,4.57A4.58,4.58,0,0,0,14.24,0V1.37a3.2,3.2,0,0,1,0,6.39H0V9.15H14.27A4.58,4.58,0,0,0,18.81,4.57Z"
+                        }
+                      }),
+                      _c("path", {
+                        staticClass: "cls-2",
+                        attrs: {
+                          d:
+                            "M14.77,15.69a4.57,4.57,0,0,1-4.57,4.57V18.89a3.2,3.2,0,0,0,0-6.4H0V11.11H10.24A4.58,4.58,0,0,1,14.77,15.69Z"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        : _c("div", [_vm._v("\n\t\t\tNot A/B/C\n\t\t")])
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("h2", { staticClass: "text-3xl font-bold text-opacity-25" }, [
+        _vm._v(_vm._s(_vm.$data.temp) + "c")
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38643,34 +39678,42 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! v-calendar */ "./node_modules/v-calendar/lib/v-calendar.umd.min.js");
-/* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(v_calendar__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-slick-carousel */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.umd.js");
-/* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.css");
-/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel-theme.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel-theme.css");
-/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_event__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/event */ "./resources/js/components/event.vue");
-/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/slider */ "./resources/js/components/slider.vue");
-/* harmony import */ var _components_eventslider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/eventslider */ "./resources/js/components/eventslider.vue");
-/* harmony import */ var _components_restaurant__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/restaurant */ "./resources/js/components/restaurant.vue");
-/* harmony import */ var _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/restaurantsearch */ "./resources/js/components/restaurantsearch.vue");
-/* harmony import */ var _components_foo__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/foo */ "./resources/js/components/foo.vue");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! v-calendar */ "./node_modules/v-calendar/lib/v-calendar.umd.min.js");
+/* harmony import */ var v_calendar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(v_calendar__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-slick-carousel */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.umd.js");
+/* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.css");
+/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel-theme.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel-theme.css");
+/* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel_dist_vue_slick_carousel_theme_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_event__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/event */ "./resources/js/components/event.vue");
+/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/slider */ "./resources/js/components/slider.vue");
+/* harmony import */ var _components_eventslider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/eventslider */ "./resources/js/components/eventslider.vue");
+/* harmony import */ var _components_restaurant__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/restaurant */ "./resources/js/components/restaurant.vue");
+/* harmony import */ var _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/restaurantsearch */ "./resources/js/components/restaurantsearch.vue");
 /* harmony import */ var _components_restaurantresult__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/restaurantresult */ "./resources/js/components/restaurantresult.vue");
 /* harmony import */ var _components_datepicker__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/datepicker */ "./resources/js/components/datepicker.vue");
 /* harmony import */ var _components_mapbox__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/mapbox */ "./resources/js/components/mapbox.vue");
 /* harmony import */ var _components_searchresult__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/searchresult */ "./resources/js/components/searchresult.vue");
+/* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/weather */ "./resources/js/components/weather.vue");
+
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 /* eslint-disable no-new */
 
@@ -38690,19 +39733,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("VueSlickCarousel", __webpack_require__(/*! vue-slick-carousel */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.umd.js"));
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("restaurant", _components_restaurant__WEBPACK_IMPORTED_MODULE_10__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("restaurantsearch", _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_11__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('restaurantresult', _components_restaurantresult__WEBPACK_IMPORTED_MODULE_13__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('mapbox', _components_mapbox__WEBPACK_IMPORTED_MODULE_15__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("event", _components_event__WEBPACK_IMPORTED_MODULE_7__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("slider", _components_slider__WEBPACK_IMPORTED_MODULE_8__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(v_calendar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component("VueSlickCarousel", __webpack_require__(/*! vue-slick-carousel */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.umd.js"));
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component("restaurant", _components_restaurant__WEBPACK_IMPORTED_MODULE_11__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component("restaurantsearch", _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_12__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('restaurantresult', _components_restaurantresult__WEBPACK_IMPORTED_MODULE_13__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('mapbox', _components_mapbox__WEBPACK_IMPORTED_MODULE_15__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component("event", _components_event__WEBPACK_IMPORTED_MODULE_8__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component("slider", _components_slider__WEBPACK_IMPORTED_MODULE_9__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(v_calendar__WEBPACK_IMPORTED_MODULE_4___default.a, {
   componentPrefix: 'vc' // Use <vc-calendar /> instead of <v-calendar />..other defaults 
 
-});
-var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+}); // Store is used as a data store for VueX, this is accessible globally
+
+var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
   state: {
     restaurants: {
       'manahatta': {
@@ -38938,19 +39982,20 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       }
     },
     time: new Date().toLocaleTimeString().split(/:| /),
-    restaurantsPosts: []
+    restaurantsPosts: [],
+    weather: []
   },
   getters: {
     getRestaurantPost: function getRestaurantPost(state) {
       return function (id) {
-        return state.restaurantsPosts.filter(function (posts) {
+        return state.restaurantsPosts.find(function (posts) {
           return posts.id === id;
         });
       };
     },
     getManyRestaurants: function getManyRestaurants(state) {
       return function (data) {
-        state.restaurantsPosts.filter(function (e) {
+        return state.restaurantsPosts.filter(function (e) {
           return data.indexOf(e.id) != -1;
         });
       };
@@ -38960,13 +40005,51 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   actions: {
     // load posts gets all restaurant posts from the WP rest api and then commits it to updatePosts (Mutation) with the json as a payload
     loadPosts: function loadPosts(_ref) {
-      var commit = _ref.commit;
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/wordpress/wp-json/wp/v2/restaurant').then(function (data) {
-        var payload = data.data;
-        commit('updatePosts', payload);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                commit = _ref.commit;
+                axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('http://localhost/wordpress/wp-json/wp/v2/restaurant').then(function (data) {
+                  var payload = data.data;
+                  commit('updatePosts', payload);
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    // the weather data is accessible via the WP API  
+    loadWeather: function loadWeather(_ref2) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                commit = _ref2.commit;
+                axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('http://localhost/wordpress/wp-json/lw/v1/weather').then(function (data) {
+                  var payload = data.data;
+                  commit('updateWeather', payload);
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   // used to update the state
@@ -38974,51 +40057,51 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     // update Posts takes the payload given to it and updates the restaurants state. state is passed so it can access it.
     updatePosts: function updatePosts(state, payload) {
       state.restaurantsPosts = payload;
+    },
+    updateWeather: function updateWeather(state, payload) {
+      state.weather = payload;
     }
   }
 });
 
-new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
   store: store,
   components: {
-    event: _components_event__WEBPACK_IMPORTED_MODULE_7__["default"],
-    eventslider: _components_eventslider__WEBPACK_IMPORTED_MODULE_9__["default"],
+    event: _components_event__WEBPACK_IMPORTED_MODULE_8__["default"],
+    eventslider: _components_eventslider__WEBPACK_IMPORTED_MODULE_10__["default"],
     mapbox: _components_mapbox__WEBPACK_IMPORTED_MODULE_15__["default"],
     searchresult: _components_searchresult__WEBPACK_IMPORTED_MODULE_16__["default"],
-    slider: _components_slider__WEBPACK_IMPORTED_MODULE_8__["default"],
-    restaurant: _components_restaurant__WEBPACK_IMPORTED_MODULE_10__["default"],
+    slider: _components_slider__WEBPACK_IMPORTED_MODULE_9__["default"],
+    restaurant: _components_restaurant__WEBPACK_IMPORTED_MODULE_11__["default"],
     datepicker: _components_datepicker__WEBPACK_IMPORTED_MODULE_14__["default"],
-    foo: _components_foo__WEBPACK_IMPORTED_MODULE_12__["default"],
-    restaurantsearch: _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_11__["default"],
+    restaurantsearch: _components_restaurantsearch__WEBPACK_IMPORTED_MODULE_12__["default"],
     restaurantresult: _components_restaurantresult__WEBPACK_IMPORTED_MODULE_13__["default"],
-    VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_4___default.a
+    weather: _components_weather__WEBPACK_IMPORTED_MODULE_17__["default"],
+    VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_5___default.a
   },
   data: function data() {
     return {
-      idData: ['125', '119']
+      idData: ['125', '119', '125']
     };
   },
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getManyRestaurants'])), {}, {
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])(['getManyRestaurants'])), {}, {
+    homePagepostIDs: function homePagepostIDs() {
+      var _this = this;
+
+      return this.$data.idData.map(function (data) {
+        return _this.$store.getters.getManyRestaurants(data)[0];
+      });
+    },
     restaurantPosts: function restaurantPosts() {
       return this.$store.state.restaurantsPosts;
-    },
-    allPosts: function allPosts() {
-      setTimeout(function () {
-        if (!this.$store.state.restaurantPosts) {
-          return ['error'];
-        }
-
-        console.log(this.$store.state);
-        return this.$store.state.restaurantsPosts.filter(function (e) {
-          return this.$data.idData.indexOf(e.id) != -1;
-        });
-      }, 3000);
     }
   }),
   method: {},
+  //  mounted: loads in after the dom is fully loaded. Here we are telling the actions to run to get the api data
   mounted: function mounted() {
     this.$store.dispatch('loadPosts');
+    this.$store.dispatch('loadWeather');
   }
 });
 
@@ -39226,75 +40309,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_eventslider_vue_vue_type_template_id_512a4500___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_eventslider_vue_vue_type_template_id_512a4500___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/foo.vue":
-/*!*****************************************!*\
-  !*** ./resources/js/components/foo.vue ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.vue?vue&type=template&id=ec288c6a& */ "./resources/js/components/foo.vue?vue&type=template&id=ec288c6a&");
-/* harmony import */ var _foo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foo.vue?vue&type=script&lang=js& */ "./resources/js/components/foo.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _foo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/foo.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/foo.vue?vue&type=script&lang=js&":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/foo.vue?vue&type=script&lang=js& ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_foo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./foo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/foo.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_foo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/foo.vue?vue&type=template&id=ec288c6a&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/foo.vue?vue&type=template&id=ec288c6a& ***!
-  \************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./foo.vue?vue&type=template&id=ec288c6a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/foo.vue?vue&type=template&id=ec288c6a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_foo_vue_vue_type_template_id_ec288c6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -39709,6 +40723,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_459cf26c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_459cf26c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/weather.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/weather.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather.vue?vue&type=template&id=7ba29f79& */ "./resources/js/components/weather.vue?vue&type=template&id=7ba29f79&");
+/* harmony import */ var _weather_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather.vue?vue&type=script&lang=js& */ "./resources/js/components/weather.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _weather_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/weather.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/weather.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/weather.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_weather_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./weather.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/weather.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_weather_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/weather.vue?vue&type=template&id=7ba29f79&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/weather.vue?vue&type=template&id=7ba29f79& ***!
+  \****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./weather.vue?vue&type=template&id=7ba29f79& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/weather.vue?vue&type=template&id=7ba29f79&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_weather_vue_vue_type_template_id_7ba29f79___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

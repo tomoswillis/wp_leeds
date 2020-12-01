@@ -14,11 +14,11 @@ import slider from './components/slider'
 import eventslider from './components/eventslider'
 import restaurant from './components/restaurant'
 import restaurantsearch from './components/restaurantsearch'
-import foo from './components/foo'
 import restaurantresult from './components/restaurantresult'
 import datepicker from './components/datepicker'
 import mapbox from './components/mapbox'
 import searchresult from './components/searchresult'
+import weather from './components/weather'
 
 
 
@@ -34,6 +34,7 @@ Vue.use(VCalendar, {
 	componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />..other defaults 
 });
 
+// Store is used as a data store for VueX, this is accessible globally
 const store = new Vuex.Store({
 	state: {
 		restaurants: {
@@ -273,11 +274,12 @@ const store = new Vuex.Store({
 		},
 		time: ( new Date() ).toLocaleTimeString().split(/:| /),
 		restaurantsPosts: [],
+		weather: [],
 	},
 
 	getters: {
 		getRestaurantPost: (state) => (id) => {
-		  return state.restaurantsPosts.filter(posts => posts.id === id)
+		  return state.restaurantsPosts.find(posts => posts.id === id)
 		},
 
 		getManyRestaurants: (state) => (data) => {
@@ -301,13 +303,30 @@ const store = new Vuex.Store({
 				})
 		},
 
+		// the weather data is accessible via the WP API  
+		async loadWeather({ commit }) {
+			axios
+				.get('http://localhost/wordpress/wp-json/lw/v1/weather')
+				.then(data => {
+					let payload = data.data
+					commit('updateWeather', payload)
+				})
+				.catch(error => {
+					console.log(error);
+				})
+		},
+
 	},
 	// used to update the state
 	mutations: {
 		// update Posts takes the payload given to it and updates the restaurants state. state is passed so it can access it.
 		updatePosts (state, payload){
 			state.restaurantsPosts = payload
-		}
+		},
+
+		updateWeather (state, payload){
+			state.weather = payload
+		},
 	},
 
 
@@ -326,9 +345,9 @@ new Vue({
 		slider, 
 		restaurant, 
 		datepicker,
-		foo,
 		restaurantsearch,
 		restaurantresult,
+		weather,
 		VueSlickCarousel,
 		
 	},
@@ -345,23 +364,10 @@ new Vue({
 			
 		  ]),
 
-		  allPosts() {
-			//  if (! this.$store.state.restaurantPosts){
-			// 	return ['error']
-			// 	} else{
-			// 	return this.$store.state.restaurantsPosts;
-			// 	// return this.$store.state.restaurantsPosts.filter(function(e) {
-			// 	// 	return this.$data.idData.indexOf(e.id) != -1;
-			// 	// })
-			//  	}
-		// return	this.$store.getters.getManyRestaurants('178');
-
-		return this.$data.idData.map((data)=>{  
-            return this.$store.getters.getManyRestaurants(data)[0]['acf']; 
-        }) 
-	
-			
-			
+		homePagepostIDs() {
+			return this.$data.idData.map((data)=>{  
+				return this.$store.getters.getManyRestaurants(data)[0]; 
+			}) 
 		},
 
 		restaurantPosts() {
@@ -374,8 +380,10 @@ new Vue({
 
 	},
 
+	//  mounted: loads in after the dom is fully loaded. Here we are telling the actions to run to get the api data
 	mounted() {
 		this.$store.dispatch('loadPosts')
+		this.$store.dispatch('loadWeather')
 
 	
 		
