@@ -47,5 +47,39 @@
 				?>	
 			</div>
 		</nav>
+
+		<div id="burgerMenu" class="burgerMenu bg-orange-500 w-12 h-12 z-100 object-right rounded-md m-2" >
+			<svg width="300" height="300"  fill="white" xmlns="http://www.w3.org/2000/svg">
+				
+				<path d="M7.94977 11.9498H39.9498" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M7.94977 23.9498H39.9498" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M7.94977 35.9498H39.9498" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+
+		</div>
+
+		<div id="mobileNav" class="mobileNav absolute w-full h-full text-4xl text-white pr-5 pt-10 text-right font-extrabold absolute">
+				<div>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						)
+					);
+					?>	
+				</div>
+		</div>
 	</header>
+
+	<script>
+        const burger = document.querySelector('#burgerMenu');
+        const nav = document.querySelector('#mobileNav');
+
+		burger.addEventListener('click', ()=>{
+			nav.classList.toggle('show');
+			nav.classList.toggle('mobileNav');
+        })
+		
+	</script>
 

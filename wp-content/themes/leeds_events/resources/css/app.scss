@@ -23,8 +23,52 @@ color: #f1f1f1;
 
 }
 
+::selection {
+    color: white;
+    background: orange;
+  }
+
+.show{
+    z-index: 1000;
+    opacity: 100;
+    background-color: rgba($color: #fff, $alpha: .8);
+    transition: all 0.8s ease-in-out;
+}
+
+.mobileNav{
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(500px);
+    transition: all 0.8s ease-in-out;
+}
+
+.burgerMenu{
+    cursor: pointer;
+}
+
 .center{ 
     margin: 0 auto;
+}
+
+.thumbnail{
+    user-drag: none; 
+    -webkit-user-drag: none;
+}
+
+.weather{
+    position: absolute;
+    bottom: 5em;
+    right: 5em;
+}
+
+.rain{
+    fill: none;
+    stroke: #fff;
+}
+
+.clearIcon{
+    fill: #fff;
+    stroke: none;
 }
 
 .l-button:hover {
