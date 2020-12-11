@@ -16,7 +16,7 @@ get_header();
 			<h1 class="text-3xl mt-10">All Restaurants</h1>
 		</div>
 		<form action="/wordpress/search-restaurants/" method="get">
-			<div class="md:w-2/5">
+			<div class="">
 				<div class="shadow-md px-2 my-5 flex justify-between rounded-lg">
 					<input type="text" name="search_text" placeholder="Search Restaurants" class="bg-transparent w-4/5 pl-2">
 					<button type="submit" name="" class="bg-orange-500 w-8 h-8 pt-1 rounded-md my-2 text-white">
